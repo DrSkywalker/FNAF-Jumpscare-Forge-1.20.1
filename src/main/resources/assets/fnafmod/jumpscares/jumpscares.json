@@ -1,0 +1,84 @@
+{
+  "entries": [
+    {
+      "id": "fnafmod:toy_freddy",
+      "folder": "fnafmod:textures/jumpscares/toy_freddy/",
+      "pattern": "toyfreddy_%d.png",
+      "frameCount": 18,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.foxy"
+    },
+    {
+      "id": "fnafmod:toy_bonnie",
+      "folder": "fnafmod:textures/jumpscares/toy_bonnie/",
+      "pattern": "toybonnie_%d.png",
+      "frameCount": 13,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.foxy"
+    },
+    {
+      "id": "fnafmod:toy_chica",
+      "folder": "fnafmod:textures/jumpscares/toy_chica/",
+      "pattern": "toychica_%d.png",
+      "frameCount": 13,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.foxy"
+    },
+    {
+      "id": "fnafmod:mangle",
+      "folder": "fnafmod:textures/jumpscares/mangle/",
+      "pattern": "mangle_%d.png",
+      "frameCount": 16,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.foxy"
+    },
+    {
+      "id": "fnafmod:withered_freddy",
+      "folder": "fnafmod:textures/jumpscares/withered_freddy/",
+      "pattern": "witheredfreddy_%d.png",
+      "frameCount": 35,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.foxy"
+    },
+    {
+      "id": "fnafmod:withered_bonnie",
+      "folder": "fnafmod:textures/jumpscares/withered_bonnie/",
+      "pattern": "witheredbonnie_%d.png",
+      "frameCount": 16,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.foxy"
+    },
+    {
+      "id": "fnafmod:withered_chica",
+      "folder": "fnafmod:textures/jumpscares/withered_chica/",
+      "pattern": "witheredchica_%d.png",
+      "frameCount": 12,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.foxy"
+    },
+    {
+      "id": "fnafmod:withered_foxy",
+      "folder": "fnafmod:textures/jumpscares/withered_foxy/",
+      "pattern": "foxy_%d.png",
+      "frameCount": 14,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.foxy"
+    },
+    {
+      "id": "fnafmod:golden_freddy",
+      "folder": "fnafmod:textures/jumpscares/golden_freddy/",
+      "pattern": "goldenfreddy_%d.png",
+      "frameCount": 13,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.foxy"
+    },
+    {
+      "id": "fnafmod:puppet",
+      "folder": "fnafmod:textures/jumpscares/puppet/",
+      "pattern": "puppet_%d.png",
+      "frameCount": 15,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.foxy"
+    }
+  ]
+}

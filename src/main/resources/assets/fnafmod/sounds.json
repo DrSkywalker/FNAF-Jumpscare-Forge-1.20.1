@@ -1,0 +1,5 @@
+{
+  "jumpscares.foxy": {
+    "sounds": [ { "name": "fnafmod:jumpscares/foxy", "stream": false } ]
+  }
+}
