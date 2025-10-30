@@ -1,19 +1,22 @@
 plugins {
     id 'net.minecraftforge.gradle' version '6.0.+'
-    // id 'com.modrinth.minotaur' version '2.+'
-    // id 'curseforge.gradle' version '1.0.+'   // optional upload plugins
 }
 
-group = 'net.lee'                // your package root (adjust as you like)
-version = project.findProperty('mod_version') ?: '1.0.0'
-archivesBaseName = 'fnafmod'     // jar base name
+group = 'net.lee'
+def modId          = (project.findProperty('modid') ?: 'fnafmod').toString()
+def modVersion     = (project.findProperty('mod_version') ?: '1.0.0').toString()
+def mcVersion      = (project.findProperty('minecraft_version') ?: '1.20.1').toString()
+def forgeVersion   = (project.findProperty('forge_version') ?: '47.4.10').toString()
+def mappingsCh     = (project.findProperty('mappings_channel') ?: 'official').toString()
+def mappingsVer    = (project.findProperty('mappings_version') ?: mcVersion).toString()
+def modName        = (project.findProperty('mod_name') ?: 'FNAF Jumpscare (Forge)').toString()
+def modAuthors     = (project.findProperty('mod_authors') ?: 'Lee').toString()
+def modDescription = (project.findProperty('mod_description') ?: 'UCN-style jumpscares on any screen, incl. main menu.').toString()
+
+version = modVersion
 
 java {
-    // Require Java 17
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
-    }
-    // (Optional) also pin source/target
+    toolchain { languageVersion = JavaLanguageVersion.of(17) }
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
 }
@@ -24,125 +27,56 @@ repositories {
 }
 
 minecraft {
-    // Mojang official mappings for Forge
-    mappings channel: (project.findProperty('mappings_channel') ?: 'official'),
-            version: (project.findProperty('mappings_version') ?: '1.20.1')
+    mappings channel: mappingsCh, version: mappingsVer
 
     runs {
         client {
             workingDirectory project.file('run')
-            // put your main mod class here if you want logs to highlight it
-            // property 'forge.logging.markers', 'REGISTRIES'
-            // property 'forge.logging.console.level', 'debug'
             args '--username', 'Dev'
         }
     }
 }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:${project.findProperty('minecraft_version') ?: '1.20.1'}-${project.findProperty('forge_version') ?: '47.4.10'}"
+    minecraft "net.minecraftforge:forge:${mcVersion}-${forgeVersion}"
 }
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
-    // Ensures 17 bytecode even if IDE uses newer JDK
     options.release = 17
 }
 
-def modVersion = project.findProperty('mod_version') ?: '1.0.0'
-version = modVersion
-
-tasks.named('processResources', ProcessResources).configure {
-    inputs.property 'mod_version', modVersion
-    inputs.property 'modid', 'fnafmod'
-
-    filesMatching('META-INF/mods.toml') {
-        expand([
-                mod_version: modVersion,   // <— provide it
-                modid      : 'fnafmod'
-        ])
-    }
-}
-
 tasks.named('jar', Jar).configure {
-    from('LICENSE') { rename { "${it}_${archivesBaseName}" } ; into('META-INF') }
+    archiveBaseName.set(modId)
     manifest {
         attributes(
-                'Specification-Title'   : 'FNAF Jumpscare Mod',
-                'Specification-Vendor'  : 'Lee',
-                'Specification-Version' : '1',
-                'Implementation-Title'  : archivesBaseName,
-                'Implementation-Version': version,
-                'Implementation-Vendor' : 'Lee',
-                'Built-By'              : 'Gradle'
+                'Implementation-Title'  : modName,
+                'Implementation-Version': modVersion,
+                'Implementation-Vendor' : modAuthors
         )
     }
 }
 
-/* -----------------------------
-   CHANGELOG RELEASE TASK
-   Moves ## [Unreleased] to a versioned section with today’s date.
-   Usage:
-     ./gradlew releaseChangelog -PversionName=1.0.1
-------------------------------*/
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
+tasks.named('processResources', ProcessResources).configure {
+    // Tell Gradle which tokens we will expand (for up-to-date checks)
+    inputs.property 'modid', modId
+    inputs.property 'mod_version', modVersion
+    inputs.property 'mod_name', modName
+    inputs.property 'mod_authors', modAuthors
+    inputs.property 'mod_description', modDescription
+    inputs.property 'minecraft_version', mcVersion
+    inputs.property 'forge_version', forgeVersion
 
-ext.readProp = { String key ->
-    if (project.hasProperty(key)) return project.property(key).toString()
-    def props = new Properties()
-    def f = file('gradle.properties')
-    if (f.exists()) f.withInputStream { props.load(it) }
-    return props.getProperty(key, '')
-}
-
-tasks.register('releaseChangelog') {
-    group = 'release'
-    description = 'Move Unreleased changelog entries into a versioned section.'
-    doLast {
-        def changelogFile = file('CHANGELOG.md')
-        if (!changelogFile.exists()) throw new GradleException('CHANGELOG.md not found')
-
-        def versionName = readProp('versionName')
-        if (!versionName) versionName = readProp('mod_version')
-        if (!versionName || versionName == 'unspecified') versionName = project.version.toString()
-        if (!versionName || versionName == 'unspecified')
-            throw new GradleException('No version provided. Pass -PversionName=1.0.1 or set mod_version.')
-
-        def today = LocalDate.now().format(DateTimeFormatter.ISO_DATE)
-        def content = changelogFile.getText('UTF-8')
-
-        def unreleasedHeader = ~/^## \[Unreleased\]\s*$/m
-        def headers = ~/^## (?:\[Unreleased\]|[0-9]+\.[0-9]+\.[0-9]+.*?)$/m
-
-        def m = unreleasedHeader.matcher(content)
-        if (!m.find()) throw new GradleException("Could not find '## [Unreleased]' in CHANGELOG.md")
-
-        def start = m.end()
-        def next = headers.matcher(content)
-        int end = content.length()
-        while (next.find()) {
-            if (next.start() > start) { end = next.start(); break }
-        }
-
-        def body = content.substring(start, end).trim()
-        if (body.isEmpty()) { println 'No unreleased changes — nothing to release.'; return }
-
-        def newSection = """\
-## ${versionName} – ${today}
-${body}
-
-""".stripIndent()
-
-        def newContent = new StringBuilder()
-        newContent.append(content.substring(0, start))
-        newContent.append('\n- (no changes yet)\n\n')
-        newContent.append(content.substring(end))
-
-        def insertAt = newContent.indexOf('\n', start) + 1
-        newContent.insert(insertAt, newSection)
-
-        changelogFile.write(newContent.toString(), 'UTF-8')
-        println "✅ CHANGELOG.md updated for version ${versionName} (${today})"
+    // Expand ONLY mods.toml (avoid touching JSON/other assets)
+    filesMatching('META-INF/mods.toml') {
+        expand([
+                modid            : modId,
+                mod_version      : modVersion,
+                mod_name         : modName,
+                mod_authors      : modAuthors,
+                mod_description  : modDescription,
+                minecraft_version: mcVersion,
+                forge_version    : forgeVersion
+        ])
     }
 }
