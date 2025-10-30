@@ -3,8 +3,9 @@ package net.lee.fnafmod.client;
 import net.minecraft.resources.ResourceLocation;
 
 public record Jumpscare(String id, ResourceLocation[] frames, int fps, ResourceLocation soundKey, boolean loop,
-                        String anchor, double scale, ResourceLocation spawnMobId, String spawnName, int spawnOffX, int spawnOffY, int spawnOffZ,
-                        String[] armor)  {
+                        String anchor, double scale, ResourceLocation spawnMobId, String spawnName, int spawnOffX,
+                        int spawnOffY, int spawnOffZ,
+                        String[] armor) {
 
     public Jumpscare(
             String id,

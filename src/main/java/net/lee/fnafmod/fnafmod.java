@@ -14,7 +14,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 public class fnafmod {
     public static final String MOD_ID = "fnafmod";
 
-    // ✅ 1.20.1 needs a NO-ARG constructor
     public fnafmod(FMLJavaModLoadingContext context) {
         IEventBus modBus = context.getModEventBus();
         modBus.addListener(this::commonSetup);

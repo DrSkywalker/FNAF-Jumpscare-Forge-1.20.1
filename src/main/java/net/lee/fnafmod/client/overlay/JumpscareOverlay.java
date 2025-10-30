@@ -8,6 +8,9 @@ import net.minecraftforge.client.gui.overlay.IGuiOverlay;
 public class JumpscareOverlay implements IGuiOverlay {
     @Override
     public void render(ForgeGui gui, GuiGraphics graphics, float partialTick, int screenWidth, int screenHeight) {
-        JumpscareManager.get().render(graphics);
+        JumpscareManager manager = JumpscareManager.get();
+        if (manager != null) {
+            manager.render(graphics);
+        }
     }
 }

@@ -18,5 +18,21 @@
         "stream": false
       }
     ]
+  },
+  "jumpscares.xor": {
+    "sounds": [
+      {
+        "name": "fnafmod:jumpscares/xor",
+        "stream": false
+      }
+    ]
+  },
+  "jumpscares.trashgang": {
+    "sounds": [
+      {
+        "name": "fnafmod:jumpscares/trash_gang",
+        "stream": false
+      }
+    ]
   }
 }

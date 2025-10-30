@@ -1,4 +1,3 @@
-// java
 package net.lee.fnafmod.client;
 
 import com.google.gson.Gson;
@@ -59,10 +58,9 @@ public class JumpscareManager {
             var rm = Minecraft.getInstance().getResourceManager();
             Optional<Resource> opt = rm.getResource(id);
             if (opt.isPresent()) {
-                try (var in = opt.get().open()) {
-                    com.mojang.blaze3d.platform.NativeImage img = com.mojang.blaze3d.platform.NativeImage.read(in);
+                try (var in = opt.get().open();
+                     com.mojang.blaze3d.platform.NativeImage img = com.mojang.blaze3d.platform.NativeImage.read(in)) {
                     int[] dims = new int[]{img.getWidth(), img.getHeight()};
-                    img.close();
                     TEX_SIZE_CACHE.put(id, dims);
                     return dims;
                 }
@@ -263,7 +261,29 @@ public class JumpscareManager {
         g.pose().translate(0.0F, 0.0F, 1000.0F);
         RenderSystem.disableDepthTest();
 
-        if ("bottom_left".equalsIgnoreCase(active.anchor())) {
+        // Special-case: XOR should glitch rapidly side-to-side across the bottom of the screen
+        if ("fnafmod:xor".equalsIgnoreCase(active.id())) {
+            int[] dims = getTextureSize(frame);
+            int texW = dims[0];
+            int texH = dims[1];
+
+            int drawH = (int) Math.max(16, sh * active.scale());
+            int drawW = Math.max(16, (int) Math.round(drawH * (texW / (double) texH)));
+
+            // Fast oscillation frequency (Hz). Increase for more rapid movement.
+            double freqHz = 8.0;
+            double t = elapsed;
+
+            // Smooth ping-pong across the available horizontal range using sine
+            double factor = (Math.sin(t * Math.PI * 2.0 * freqHz) + 1.0) * 0.5;
+            int x = (int) Math.round(factor * Math.max(0, sw - drawW));
+
+            // keep at bottom with small padding
+            int pad = 6;
+            int y = sh - drawH - pad;
+
+            g.blit(frame, x, y, drawW, drawH, 0, 0, texW, texH, texW, texH);
+        } else if ("bottom_left".equalsIgnoreCase(active.anchor())) {
             int[] dims = getTextureSize(frame);
             int texW = dims[0];
             int texH = dims[1];

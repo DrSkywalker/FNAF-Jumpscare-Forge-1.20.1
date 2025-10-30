@@ -4,11 +4,23 @@ All notable changes to this project will be documented here.
 This project follows [Semantic Versioning](https://semver.org/).
 
 ---
+## 1.0.6 – 2025-10-30
+
+> _XOR and Trash and The Gang Update_
+
+### ✨ Features
+- Added XOR and Trash and The Gang as jumpscare characters
+- Updated characters.json to include XOR and Trash and The Gang
+- Added XOR and Trash and The Gang sound effects
+- Added XOR and Trash and The Gang animated PNG frames
+- Gave XOR the same animation from UCN
+
 ## 1.0.5 – 2025-10-30
 
 > _DeeDee's Contender Update_
 
 ### ✨ Features
+
 - Added option for all jumpscare characters to spawn hostile mobs with Armor.
 - Spawned mobs will have randomized Armor pieces (Leather, Iron, Gold, Diamond, Netherite).
 - Updated characters.json to include mob spawn settings for each character.
@@ -19,6 +31,7 @@ This project follows [Semantic Versioning](https://semver.org/).
 > _Animation Update_
 
 ### 🎨 Visuals
+
 - Improved Jumpscare animation to be layered on top of Minecraft UI elements for better visibility.
 
 ## 1.0.3 – 2025-10-30
@@ -26,6 +39,7 @@ This project follows [Semantic Versioning](https://semver.org/).
 > _Server Update_
 
 ### ⚙️ Technical
+
 - Added Check to prevent Forge Server crashes on Loading the Mod.
 - Forge Servers now fully compatible with the Mod.
 

@@ -3,22 +3,23 @@ package net.lee.fnafmod.network;
 import net.lee.fnafmod.util.ArmorRandomizer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.network.chat.Component;
 import net.minecraftforge.network.NetworkEvent;
 
 import java.util.function.Supplier;
 
-public record SpawnMobAfterScareC2S(ResourceLocation mobId, String spawnName, int offX, int offY, int offZ, String[] armor) {
+public record SpawnMobAfterScareC2S(ResourceLocation mobId, String spawnName, int offX, int offY, int offZ,
+                                    String[] armor) {
 
     public static void encode(SpawnMobAfterScareC2S msg, FriendlyByteBuf buf) {
         buf.writeResourceLocation(msg.mobId);

@@ -103,6 +103,39 @@
         "random",
         "random"
       ]
+    },
+    {
+      "id": "fnafmod:xor",
+      "loop": true,
+      "folder": "fnafmod:textures/jumpscares/xor/",
+      "pattern": "xor_%d.png",
+      "frameCount": 11,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.xor",
+      "anchor": "bottom_left",
+      "scale": 0.33,
+      "spawn_mob": "minecraft:zombie",
+      "spawn_name": "XOR's Contender",
+      "spawn_offset": [
+        0,
+        0,
+        2
+      ],
+      "armor": [
+        "random",
+        "random",
+        "random",
+        "random"
+      ]
+    },
+    {
+      "id": "fnafmod:trash_gang",
+      "loop": true,
+      "folder": "fnafmod:textures/jumpscares/trash_gang/",
+      "pattern": "trashgang_%d.png",
+      "frameCount": 5,
+      "fps": 10,
+      "sound": "fnafmod:jumpscares.trashgang"
     }
   ]
 }
