@@ -4,6 +4,13 @@ All notable changes to this project will be documented here.
 This project follows [Semantic Versioning](https://semver.org/).
 
 ---
+## 1.0.3 – 2025-10-30
+
+> _Server Update_
+
+### ⚙️ Technical
+- Added Check to prevent Forge Server crashes on Loading the Mod.
+- Forge Servers now fully compatible with the Mod.
 
 ## 1.0.2 – 2025-10-30
 
