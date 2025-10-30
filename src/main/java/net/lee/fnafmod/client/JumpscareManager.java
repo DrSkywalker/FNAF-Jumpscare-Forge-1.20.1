@@ -1,8 +1,10 @@
+// java
 package net.lee.fnafmod.client;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import net.lee.fnafmod.network.FnafNet;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
@@ -13,56 +15,77 @@ import net.minecraft.sounds.SoundEvent;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class JumpscareManager {
 
     private static final JumpscareManager INSTANCE = new JumpscareManager();
-    public static JumpscareManager get() { return INSTANCE; }
-
-    private long lastTriggerNs = 0L;
     private static final long MIN_RETRIGGER_NS = 250_000_000L; // 250 ms
-
-    // --- Random check window (NOT guaranteed scare) ---
-    private static final double CHECK_MIN_SECONDS = 60.0;   // earliest time to check
-    private static final double CHECK_MAX_SECONDS = 120.0;  // latest time to check
-
-    // --- Probabilities ---
-    private static final double BASE_TRIGGER_CHANCE = 0.30; // 30% per check
-    private static final double IDLE_MULTIPLIER     = 1.6;  // boost when a Screen is open
-    private static final double MAX_CHANCE_CLAMP    = 0.85; // never exceed 85%
-
-    // --- Cooldown (avoid back-to-back) ---
+    private static final double CHECK_MIN_SECONDS = 60.0;
+    private static final double CHECK_MAX_SECONDS = 120.0;
+    private static final double BASE_TRIGGER_CHANCE = 0.30;
+    private static final double IDLE_MULTIPLIER = 1.6;
+    private static final double MAX_CHANCE_CLAMP = 0.85;
     private static final double MIN_COOLDOWN_SECONDS = 10.0;
+    private static final int HOLD_LAST_SECS = 0;
+    private static final double MAX_FALLBACK_AUDIO_SECS = 12.0;
 
-    // --- Scheduler state (when to *check*, not guaranteed trigger) ---
-    private long nextCheckAtNanos = -1L;
+    private static final Gson GSON = new Gson();
+    private static final java.util.Map<ResourceLocation, int[]> TEX_SIZE_CACHE = new ConcurrentHashMap<>();
+    private static final java.util.Map<ResourceLocation, SoundEvent> SOUND_CACHE = new ConcurrentHashMap<>();
 
     private final Random rng = new Random();
     private final List<Jumpscare> catalog = new ArrayList<>();
     private final List<Jumpscare> unusedPool = new ArrayList<>();
+    private long lastTriggerNs = 0L;
+    private long nextCheckAtNanos = -1L;
 
-    // Active jumpscare state
     private Jumpscare active = null;
     private long startNanos = 0L;
-    private boolean soundPlayed = false;
-    // Max gap
-    private long nextTriggerAtNanos = -1L;
-    public boolean isActive() { return active != null; }
-    // --- Hold last frame slightly ---
-    private static final int HOLD_LAST_MS = 140;
+    private SimpleSoundInstance playingSound = null;
 
     private JumpscareManager() {
         loadCatalog();
-        if (nextTriggerAtNanos < 0L) {
-            scheduleNextCheckFromNow();
-        }
+        scheduleNextCheckFromNow();
     }
 
-    private long nowNs() { return System.nanoTime(); }
+    private static int[] getTextureSize(ResourceLocation id) {
+        int[] cached = TEX_SIZE_CACHE.get(id);
+        if (cached != null) return cached;
+
+        try {
+            var rm = Minecraft.getInstance().getResourceManager();
+            Optional<Resource> opt = rm.getResource(id);
+            if (opt.isPresent()) {
+                try (var in = opt.get().open()) {
+                    com.mojang.blaze3d.platform.NativeImage img = com.mojang.blaze3d.platform.NativeImage.read(in);
+                    int[] dims = new int[]{img.getWidth(), img.getHeight()};
+                    img.close();
+                    TEX_SIZE_CACHE.put(id, dims);
+                    return dims;
+                }
+            }
+        } catch (Exception ignored) {
+        }
+
+        return new int[]{256, 256};
+    }
+
+    public static JumpscareManager get() {
+        return INSTANCE;
+    }
+
+    public boolean isActive() {
+        return active != null;
+    }
+
+    private long nowNs() {
+        return System.nanoTime();
+    }
 
     private long randomDelayNs(double minSec, double maxSec) {
         double span = Math.max(0.0, maxSec - minSec);
-        double sec  = minSec + rng.nextDouble() * span;
+        double sec = minSec + rng.nextDouble() * span;
         return (long) (sec * 1_000_000_000L);
     }
 
@@ -70,24 +93,25 @@ public class JumpscareManager {
         nextCheckAtNanos = nowNs() + randomDelayNs(CHECK_MIN_SECONDS, CHECK_MAX_SECONDS);
     }
 
-    private boolean isIdleContext() {
-        // “Idle” = any GUI is open (title, options, pause, inventory, etc.)
-        return net.minecraft.client.Minecraft.getInstance().screen != null;
+    private boolean isIdleContext(Minecraft mc) {
+        return mc.screen != null;
     }
 
-    private double currentTriggerChance() {
+    private double currentTriggerChance(Minecraft mc) {
         double chance = BASE_TRIGGER_CHANCE;
-        if (isIdleContext()) chance *= IDLE_MULTIPLIER;
+        if (isIdleContext(mc)) chance *= IDLE_MULTIPLIER;
         return Math.min(chance, MAX_CHANCE_CLAMP);
     }
-
 
     private void loadCatalog() {
         try {
             ResourceLocation manifest = ResourceLocation.parse("fnafmod:jumpscares/jumpscares.json");
             Optional<Resource> res = Minecraft.getInstance().getResourceManager().getResource(manifest);
             if (res.isEmpty()) return;
-            JsonObject root = new Gson().fromJson(new InputStreamReader(res.get().open(), StandardCharsets.UTF_8), JsonObject.class);
+            JsonObject root = new Gson().fromJson(
+                    new InputStreamReader(res.get().open(), StandardCharsets.UTF_8),
+                    JsonObject.class
+            );
             JsonArray arr = root.getAsJsonArray("entries");
             for (int i = 0; i < arr.size(); i++) {
                 JsonObject e = arr.get(i).getAsJsonObject();
@@ -97,104 +121,156 @@ public class JumpscareManager {
                 int frameCount = e.get("frameCount").getAsInt();
                 int fps = e.get("fps").getAsInt();
                 String sound = e.get("sound").getAsString();
-
+                String anchor = e.has("anchor") ? e.get("anchor").getAsString() : "fullscreen";
+                double scale = e.has("scale") ? e.get("scale").getAsDouble() : 1.0;
+                boolean loop = e.has("loop") && e.get("loop").getAsBoolean();
+                String spawnMobId = e.has("spawn_mob") ? e.get("spawn_mob").getAsString() : null;
+                int offX = 0, offY = 0, offZ = 0;
+                if (e.has("spawn_offset")) {
+                    JsonArray off = e.getAsJsonArray("spawn_offset");
+                    if (off.size() >= 3) {
+                        offX = off.get(0).getAsInt();
+                        offY = off.get(1).getAsInt();
+                        offZ = off.get(2).getAsInt();
+                    }
+                }
+                String folderPrefix = folder.endsWith("/") ? folder : (folder + "/");
                 ResourceLocation[] frames = new ResourceLocation[frameCount];
                 for (int f = 0; f < frameCount; f++) {
                     String file = String.format(pattern, f + 1);
-                    frames[f] = ResourceLocation.parse(folder + file);
+                    frames[f] = ResourceLocation.parse(folderPrefix + file);
                 }
-                catalog.add(new Jumpscare(id, frames, fps, ResourceLocation.parse(sound)));
+                catalog.add(new Jumpscare(
+                        id,
+                        frames,
+                        fps,
+                        ResourceLocation.parse(sound),
+                        loop,
+                        anchor,
+                        scale,
+                        spawnMobId,
+                        offX, offY, offZ
+                ));
             }
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
 
-
     public void triggerRandom() {
         if (active != null) return;
-        long now = System.nanoTime();
+        long now = nowNs();
         if (now - lastTriggerNs < MIN_RETRIGGER_NS) return;
 
-        if (unusedPool.isEmpty()) { unusedPool.addAll(catalog); Collections.shuffle(unusedPool, rng); }
+        if (unusedPool.isEmpty()) {
+            unusedPool.addAll(catalog);
+            Collections.shuffle(unusedPool, rng);
+        }
         Jumpscare next = unusedPool.remove(0);
         trigger(next);
         lastTriggerNs = now;
     }
 
     public void trigger(Jumpscare js) {
-        if (active != null) return;            // ignore if already playing
+        if (active != null) return;
         this.active = js;
-        this.startNanos = System.nanoTime();
+        this.startNanos = nowNs();
 
-        // Play once, right now (UI channel)
-        var mc = net.minecraft.client.Minecraft.getInstance();
-        net.minecraft.sounds.SoundEvent se =
-                net.minecraft.sounds.SoundEvent.createVariableRangeEvent(js.soundKey);
-        mc.getSoundManager().play(
-                net.minecraft.client.resources.sounds.SimpleSoundInstance.forUI(se, 1.0f)
-        );
+        Minecraft mc = Minecraft.getInstance();
+        SoundEvent se = SOUND_CACHE.computeIfAbsent(js.soundKey(), SoundEvent::createVariableRangeEvent);
+        playingSound = SimpleSoundInstance.forUI(se, 1.0f);
+        mc.getSoundManager().play(playingSound);
     }
 
     public void tick() {
-        // Don’t schedule while a jumpscare is active
         if (active != null) return;
 
         long now = nowNs();
-        // Time to CHECK?
+        Minecraft mc = Minecraft.getInstance();
         if (nextCheckAtNanos > 0L && now >= nextCheckAtNanos && !catalog.isEmpty()) {
-            double p = currentTriggerChance();
+            double p = currentTriggerChance(mc);
             if (rng.nextDouble() < p) {
-                // Success: trigger one and set a short cooldown before next check
-                triggerRandom(); // your existing non-repeating pool method is fine
+                triggerRandom();
                 nextCheckAtNanos = now + (long) (MIN_COOLDOWN_SECONDS * 1_000_000_000L);
             } else {
-                // Missed the roll → schedule the next check window
                 scheduleNextCheckFromNow();
             }
         }
     }
 
-    private int currentFrameIndex(Jumpscare js) {
-        long elapsedNs = System.nanoTime() - startNanos;
-        double t = elapsedNs / 1_000_000_000.0;
-        int idx = (int) Math.floor(t * js.fps);
-        return Math.min(idx, js.frames.length - 1);
-    }
-
     public void render(GuiGraphics g) {
         if (active == null) return;
-        var mc = Minecraft.getInstance();
+        Minecraft mc = Minecraft.getInstance();
+
+        final double elapsed = (nowNs() - startNanos) / 1_000_000_000.0;
+        final double frameDur = 1.0 / Math.max(1, active.fps());
+
+        int idx;
+        if (active.loop()) {
+            idx = (int) Math.floor(elapsed / frameDur) % active.frames().length;
+        } else {
+            double totalAnim = active.frames().length * frameDur + HOLD_LAST_SECS;
+            double t = Math.min(elapsed, totalAnim);
+            idx = (int) Math.min(active.frames().length - 1, Math.floor(t / frameDur));
+        }
+
+        ResourceLocation frame = active.frames()[idx];
+
         int sw = mc.getWindow().getGuiScaledWidth();
         int sh = mc.getWindow().getGuiScaledHeight();
 
-        if (!soundPlayed) {
-            SoundEvent se = SoundEvent.createVariableRangeEvent(active.soundKey);
-            mc.getSoundManager().play(SimpleSoundInstance.forUI(se, 1.0f));
-            soundPlayed = true;
+        if ("bottom_left".equalsIgnoreCase(active.anchor())) {
+            int[] dims = getTextureSize(frame);
+            int texW = dims[0];
+            int texH = dims[1];
+
+            int drawH = (int) Math.max(16, sh * active.scale());
+            int drawW = Math.max(16, (int) Math.round(drawH * (texW / (double) texH)));
+
+            int pad = 6;
+            int x = pad;
+            int y = sh - drawH - pad;
+
+            // draw with computed position and size
+            g.blit(frame, x, y, drawW, drawH, 0, 0, texW, texH, texW, texH);
+        } else {
+            g.blit(frame, 0, 0, 0, 0,
+                    sw,
+                    sh,
+                    sw,
+                    sh);
         }
 
-        int idx = currentFrameIndex(active);
-        ResourceLocation frame = active.frames[idx];
+        boolean finish;
+        if (active.loop()) {
+            boolean soundActive = (playingSound != null) && mc.getSoundManager().isActive(playingSound);
+            boolean overFallback = elapsed > MAX_FALLBACK_AUDIO_SECS;
+            finish = !soundActive || overFallback;
+        } else {
+            double endAt = active.frames().length * frameDur + HOLD_LAST_SECS;
+            finish = elapsed > endAt;
+        }
 
-        g.blit(frame, 0, 0, 0, 0, sw, sh, sw, sh);
-
-        double duration = active.frames.length / (double) active.fps;
-        duration += HOLD_LAST_MS / 1000.0;
-        double elapsed = (System.nanoTime() - startNanos) / 1_000_000_000.0;
-
-        if (elapsed > duration) {
+        if (finish) {
+            Jumpscare finished = active;
             active = null;
+            playingSound = null;
 
-            // Ensure the next probability CHECK isn’t immediately after the scare ends
             long soonest = nowNs() + (long) (MIN_COOLDOWN_SECONDS * 1_000_000_000L);
             if (nextCheckAtNanos < soonest) nextCheckAtNanos = soonest;
-        }
 
-    }
-    // Manual reset if you ever need it
-    public void resetCycle() {
-        unusedPool.clear();
-        scheduleNextCheckFromNow();
+            if (finished != null && finished.spawnMobId() != null) {
+                if (mc.player != null && mc.level != null && mc.screen == null) {
+                    FnafNet.CHANNEL.sendToServer(
+                            new net.lee.fnafmod.network.SpawnMobAfterScareC2S(
+                                    finished.spawnMobId(),
+                                    finished.spawnOffX(),
+                                    finished.spawnOffY(),
+                                    finished.spawnOffZ()
+                            )
+                    );
+                }
+            }
+        }
     }
 }

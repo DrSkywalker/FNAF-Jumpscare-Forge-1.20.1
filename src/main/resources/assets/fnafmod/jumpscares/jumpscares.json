@@ -79,6 +79,23 @@
       "frameCount": 15,
       "fps": 24,
       "sound": "fnafmod:jumpscares.foxy"
+    },
+    {
+      "id": "fnafmod:deedee",
+      "loop": true,
+      "folder": "fnafmod:textures/jumpscares/deedee/",
+      "pattern": "deedee_%d.png",
+      "frameCount": 10,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.deedee",
+      "anchor": "bottom_left",
+      "scale": 0.33,
+      "spawn_mob": "minecraft:zombie",
+      "spawn_offset": [
+        0,
+        0,
+        2
+      ]
     }
   ]
 }

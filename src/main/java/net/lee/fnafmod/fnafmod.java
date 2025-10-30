@@ -1,15 +1,28 @@
 package net.lee.fnafmod;
 
 import net.lee.fnafmod.client.ClientEvents;
+import net.lee.fnafmod.network.FnafNet;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod(fnafmod.MOD_ID)
 public class fnafmod {
-    // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "fnafmod";
+
+    // ✅ 1.20.1 needs a NO-ARG constructor
     public fnafmod(FMLJavaModLoadingContext context) {
+        IEventBus modBus = context.getModEventBus();
+        modBus.addListener(this::commonSetup);
         ClientEvents.init();
+        // Register to Forge bus only if you have global gameplay events
+        MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    private void commonSetup(final FMLCommonSetupEvent event) {
+        // Networking channel & packets
+        event.enqueueWork(FnafNet::register);
     }
 }

@@ -3,14 +3,14 @@ plugins {
 }
 
 group = 'net.lee'
-def modId          = (project.findProperty('modid') ?: 'fnafmod').toString()
-def modVersion     = (project.findProperty('mod_version') ?: '1.0.0').toString()
-def mcVersion      = (project.findProperty('minecraft_version') ?: '1.20.1').toString()
-def forgeVersion   = (project.findProperty('forge_version') ?: '47.4.10').toString()
-def mappingsCh     = (project.findProperty('mappings_channel') ?: 'official').toString()
-def mappingsVer    = (project.findProperty('mappings_version') ?: mcVersion).toString()
-def modName        = (project.findProperty('mod_name') ?: 'FNAF Jumpscare (Forge)').toString()
-def modAuthors     = (project.findProperty('mod_authors') ?: 'Lee').toString()
+def modId = (project.findProperty('modid') ?: 'fnafmod').toString()
+def modVersion = (project.findProperty('mod_version') ?: '1.0.0').toString()
+def mcVersion = (project.findProperty('minecraft_version') ?: '1.20.1').toString()
+def forgeVersion = (project.findProperty('forge_version') ?: '47.4.10').toString()
+def mappingsCh = (project.findProperty('mappings_channel') ?: 'official').toString()
+def mappingsVer = (project.findProperty('mappings_version') ?: mcVersion).toString()
+def modName = (project.findProperty('mod_name') ?: 'FNAF Jumpscare (Forge)').toString()
+def modAuthors = (project.findProperty('mod_authors') ?: 'Lee').toString()
 def modDescription = (project.findProperty('mod_description') ?: 'UCN-style jumpscares on any screen, incl. main menu.').toString()
 
 version = modVersion
@@ -50,9 +50,9 @@ tasks.named('jar', Jar).configure {
     archiveBaseName.set(modId)
     manifest {
         attributes(
-                'Implementation-Title'  : modName,
+                'Implementation-Title': modName,
                 'Implementation-Version': modVersion,
-                'Implementation-Vendor' : modAuthors
+                'Implementation-Vendor': modAuthors
         )
     }
 }

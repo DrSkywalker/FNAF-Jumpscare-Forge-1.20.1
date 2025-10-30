@@ -1,5 +1,22 @@
 {
   "jumpscares.foxy": {
-    "sounds": [ { "name": "fnafmod:jumpscares/foxy", "stream": false } ]
+    "sounds": [
+      {
+        "name": "fnafmod:jumpscares/foxy",
+        "stream": false
+      }
+    ]
+  },
+  "jumpscares.deedee": {
+    "sounds": [
+      {
+        "name": "fnafmod:jumpscares/deedee1",
+        "stream": false
+      },
+      {
+        "name": "fnafmod:jumpscares/deedee2",
+        "stream": false
+      }
+    ]
   }
 }
