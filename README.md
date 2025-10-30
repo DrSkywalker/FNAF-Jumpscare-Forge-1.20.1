@@ -2,7 +2,7 @@
 
 [![Modrinth Downloads](https://img.shields.io/modrinth/dt/9nI9f8QD?color=00AF5C&label=Modrinth%20Downloads&style=for-the-badge)](https://modrinth.com/mod/fnaf-random-jumpscares)
 [![CurseForge Downloads](https://cf.way2muchnoise.eu/full_1375022_downloads.svg?badge_style=for_the_badge)](https://www.curseforge.com/minecraft/mc-mods/fnaf-random-jumpscares)
-[![GitHub Release](https://img.shields.io/github/v/release/DrSkywalker/FNAF-Jumpscare-Forge-1.20.1?style=for-the-badge&color=blue)](https://github.com/YOUR_GITHUB_USERNAME/FNAF-Jumpscare-Forge-1.20.1/releases)
+[![GitHub Release](https://img.shields.io/github/v/release/DrSkywalker/FNAF-Jumpscare-Forge-1.20.1?style=for-the-badge&color=blue)](https://github.com/DrSkywalker/FNAF-Jumpscare-Forge-1.20.1/releases)
 
 ---
 
