@@ -101,4 +101,4 @@ jobs:
 
           # Changelog
           changelog: ${{ steps.notes.outputs.notes_path }}
-          changelog-file: true
+
