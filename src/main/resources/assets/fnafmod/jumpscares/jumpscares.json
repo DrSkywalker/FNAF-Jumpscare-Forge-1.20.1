@@ -91,10 +91,17 @@
       "anchor": "bottom_left",
       "scale": 0.33,
       "spawn_mob": "minecraft:zombie",
+      "spawn_name": "DeeDee's Contender",
       "spawn_offset": [
         0,
         0,
         2
+      ],
+      "armor": [
+        "random",
+        "random",
+        "random",
+        "random"
       ]
     }
   ]

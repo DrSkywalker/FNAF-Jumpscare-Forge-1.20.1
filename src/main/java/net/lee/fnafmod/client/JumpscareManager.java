@@ -20,7 +20,6 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class JumpscareManager {
 
-    private static final JumpscareManager INSTANCE = new JumpscareManager();
     private static final long MIN_RETRIGGER_NS = 250_000_000L; // 250 ms
     private static final double CHECK_MIN_SECONDS = 60.0;
     private static final double CHECK_MAX_SECONDS = 120.0;
@@ -32,8 +31,10 @@ public class JumpscareManager {
     private static final double MAX_FALLBACK_AUDIO_SECS = 12.0;
 
     private static final Gson GSON = new Gson();
-    private static final java.util.Map<ResourceLocation, int[]> TEX_SIZE_CACHE = new ConcurrentHashMap<>();
-    private static final java.util.Map<ResourceLocation, SoundEvent> SOUND_CACHE = new ConcurrentHashMap<>();
+    private static final Map<ResourceLocation, int[]> TEX_SIZE_CACHE = new ConcurrentHashMap<>();
+    private static final Map<ResourceLocation, SoundEvent> SOUND_CACHE = new ConcurrentHashMap<>();
+
+    private static final JumpscareManager INSTANCE = new JumpscareManager();
 
     private final Random rng = new Random();
     private final List<Jumpscare> catalog = new ArrayList<>();
@@ -106,10 +107,11 @@ public class JumpscareManager {
 
     private void loadCatalog() {
         try {
-            ResourceLocation manifest = ResourceLocation.parse("fnafmod:jumpscares/jumpscares.json");
+            ResourceLocation manifest = ResourceLocation.tryParse("fnafmod:jumpscares/jumpscares.json");
+            if (manifest == null) return;
             Optional<Resource> res = Minecraft.getInstance().getResourceManager().getResource(manifest);
             if (res.isEmpty()) return;
-            JsonObject root = new Gson().fromJson(
+            JsonObject root = GSON.fromJson(
                     new InputStreamReader(res.get().open(), StandardCharsets.UTF_8),
                     JsonObject.class
             );
@@ -125,9 +127,25 @@ public class JumpscareManager {
                 String anchor = e.has("anchor") ? e.get("anchor").getAsString() : "fullscreen";
                 double scale = e.has("scale") ? e.get("scale").getAsDouble() : 1.0;
                 boolean loop = e.has("loop") && e.get("loop").getAsBoolean();
-                String spawnMobId = e.has("spawn_mob") ? e.get("spawn_mob").getAsString() : null;
+
+                // determine whether this entry wants a mob spawn
+                boolean wantsSpawn = e.has("spawn_mob") || (e.has("spawn") && e.get("spawn").getAsBoolean());
+
+                ResourceLocation spawnMobId = null;
+                String spawnName = null;
                 int offX = 0, offY = 0, offZ = 0;
-                if (e.has("spawn_offset")) {
+                String[] armor = null;
+
+                if (wantsSpawn && e.has("spawn_mob")) {
+                    spawnMobId = ResourceLocation.tryParse(e.get("spawn_mob").getAsString());
+                }
+
+                if (wantsSpawn && e.has("spawn_name")) {
+                    spawnName = e.get("spawn_name").getAsString();
+                    if (spawnName != null && spawnName.isBlank()) spawnName = null;
+                }
+
+                if (wantsSpawn && e.has("spawn_offset")) {
                     JsonArray off = e.getAsJsonArray("spawn_offset");
                     if (off.size() >= 3) {
                         offX = off.get(0).getAsInt();
@@ -135,22 +153,37 @@ public class JumpscareManager {
                         offZ = off.get(2).getAsInt();
                     }
                 }
+
+                if (wantsSpawn && e.has("armor")) {
+                    JsonArray armorArray = e.getAsJsonArray("armor");
+                    armor = new String[armorArray.size()];
+                    for (int j = 0; j < armorArray.size(); j++) {
+                        armor[j] = armorArray.get(j).getAsString();
+                    }
+                }
+
                 String folderPrefix = folder.endsWith("/") ? folder : (folder + "/");
                 ResourceLocation[] frames = new ResourceLocation[frameCount];
                 for (int f = 0; f < frameCount; f++) {
                     String file = String.format(pattern, f + 1);
-                    frames[f] = ResourceLocation.parse(folderPrefix + file);
+                    frames[f] = ResourceLocation.tryParse(folderPrefix + file);
                 }
+
+                ResourceLocation soundLoc = ResourceLocation.tryParse(sound);
+
+                // construct with spawnName in the correct position
                 catalog.add(new Jumpscare(
                         id,
                         frames,
                         fps,
-                        ResourceLocation.parse(sound),
+                        soundLoc,
                         loop,
                         anchor,
                         scale,
                         spawnMobId,
-                        offX, offY, offZ
+                        spawnName,
+                        offX, offY, offZ,
+                        armor
                 ));
             }
         } catch (Exception ex) {
@@ -164,9 +197,14 @@ public class JumpscareManager {
         if (now - lastTriggerNs < MIN_RETRIGGER_NS) return;
 
         if (unusedPool.isEmpty()) {
-            unusedPool.addAll(catalog);
-            Collections.shuffle(unusedPool, rng);
+            if (!catalog.isEmpty()) {
+                unusedPool.addAll(catalog);
+                Collections.shuffle(unusedPool, rng);
+            }
         }
+
+        if (unusedPool.isEmpty()) return;
+
         Jumpscare next = unusedPool.remove(0);
         trigger(next);
         lastTriggerNs = now;
@@ -270,13 +308,18 @@ public class JumpscareManager {
                     FnafNet.CHANNEL.sendToServer(
                             new net.lee.fnafmod.network.SpawnMobAfterScareC2S(
                                     finished.spawnMobId(),
+                                    finished.spawnName(),
                                     finished.spawnOffX(),
                                     finished.spawnOffY(),
-                                    finished.spawnOffZ()
+                                    finished.spawnOffZ(),
+                                    finished.armor()
                             )
                     );
                 }
             }
         }
+
+        RenderSystem.enableDepthTest();
+        g.pose().popPose();
     }
 }

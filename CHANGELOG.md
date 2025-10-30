@@ -4,6 +4,16 @@ All notable changes to this project will be documented here.
 This project follows [Semantic Versioning](https://semver.org/).
 
 ---
+## 1.0.5 – 2025-10-30
+
+> _DeeDee's Contender Update_
+
+### ✨ Features
+- Added option for all jumpscare characters to spawn hostile mobs with Armor.
+- Spawned mobs will have randomized Armor pieces (Leather, Iron, Gold, Diamond, Netherite).
+- Updated characters.json to include mob spawn settings for each character.
+- Added DeeDee's Contender.
+
 ## 1.0.4 – 2025-10-30
 
 > _Animation Update_

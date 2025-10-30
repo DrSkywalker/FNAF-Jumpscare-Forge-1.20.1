@@ -19,12 +19,10 @@ public class fnafmod {
         IEventBus modBus = context.getModEventBus();
         modBus.addListener(this::commonSetup);
         DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> ClientEvents::init);
-        // Register to Forge bus only if you have global gameplay events
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        // Networking channel & packets
         event.enqueueWork(FnafNet::register);
     }
 }
