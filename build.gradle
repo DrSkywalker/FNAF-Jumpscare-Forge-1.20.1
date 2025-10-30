@@ -49,15 +49,17 @@ tasks.withType(JavaCompile).configureEach {
     options.release = 17
 }
 
+def modVersion = project.findProperty('mod_version') ?: '1.0.0'
+version = modVersion
+
 tasks.named('processResources', ProcessResources).configure {
-    // Expand tokens in mods.toml and pack.mcmeta
-    inputs.property 'version', version
+    inputs.property 'mod_version', modVersion
     inputs.property 'modid', 'fnafmod'
 
-    filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
+    filesMatching('META-INF/mods.toml') {
         expand([
-                version: version,
-                modid  : 'fnafmod'
+                mod_version: modVersion,   // <— provide it
+                modid      : 'fnafmod'
         ])
     }
 }
