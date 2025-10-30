@@ -9,6 +9,7 @@ import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.client.event.ScreenEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.lwjgl.glfw.GLFW;
@@ -16,13 +17,11 @@ import org.lwjgl.glfw.GLFW;
 @Mod.EventBusSubscriber(modid = fnafmod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientEvents {
     public static void init() {
-        // Non-MOD bus events
         MinecraftForge.EVENT_BUS.addListener(ClientEvents::onClientTickEnd);
-        MinecraftForge.EVENT_BUS.addListener(ClientEvents::onScreenRenderPost);
-        MinecraftForge.EVENT_BUS.addListener(ClientEvents::onKeyInput); // <-- add this line
+        MinecraftForge.EVENT_BUS.addListener(EventPriority.LOWEST, ClientEvents::onScreenRenderPost);
+        MinecraftForge.EVENT_BUS.addListener(ClientEvents::onKeyInput);
     }
 
-    // ========== MOD BUS EVENTS ==========
     @SubscribeEvent
     public static void onRegisterKeyMappings(RegisterKeyMappingsEvent e) {
         Keybinds.register(e);
@@ -34,8 +33,6 @@ public class ClientEvents {
         e.registerAboveAll("jumpscare", new JumpscareOverlay());
     }
 
-    // ========== FORGE BUS EVENTS ==========
-    // Trigger via tick (in-world)
     public static void onClientTickEnd(TickEvent.ClientTickEvent e) {
         if (e.phase == TickEvent.Phase.END) {
             if (Keybinds.TEST_SCARE.consumeClick()) {
@@ -53,7 +50,6 @@ public class ClientEvents {
         }
     }
 
-    // Render jumpscare on top of any GUI screen (Title, Inventory, etc.)
     public static void onScreenRenderPost(ScreenEvent.Render.Post e) {
         JumpscareManager.get().render(e.getGuiGraphics());
     }

@@ -5,11 +5,9 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraftforge.client.gui.overlay.ForgeGui;
 import net.minecraftforge.client.gui.overlay.IGuiOverlay;
 
-
 public class JumpscareOverlay implements IGuiOverlay {
     @Override
     public void render(ForgeGui gui, GuiGraphics graphics, float partialTick, int screenWidth, int screenHeight) {
-        // Delegate to your jumpscare renderer
         JumpscareManager.get().render(graphics);
     }
 }

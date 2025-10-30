@@ -4,6 +4,13 @@ All notable changes to this project will be documented here.
 This project follows [Semantic Versioning](https://semver.org/).
 
 ---
+## 1.0.4 – 2025-10-30
+
+> _Animation Update_
+
+### 🎨 Visuals
+- Improved Jumpscare animation to be layered on top of Minecraft UI elements for better visibility.
+
 ## 1.0.3 – 2025-10-30
 
 > _Server Update_

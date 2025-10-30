@@ -4,6 +4,7 @@ package net.lee.fnafmod.client;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.lee.fnafmod.network.FnafNet;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -218,6 +219,11 @@ public class JumpscareManager {
 
         int sw = mc.getWindow().getGuiScaledWidth();
         int sh = mc.getWindow().getGuiScaledHeight();
+
+        // Push a high Z translation and disable depth testing so the jumpscare draws on top
+        g.pose().pushPose();
+        g.pose().translate(0.0F, 0.0F, 1000.0F);
+        RenderSystem.disableDepthTest();
 
         if ("bottom_left".equalsIgnoreCase(active.anchor())) {
             int[] dims = getTextureSize(frame);
