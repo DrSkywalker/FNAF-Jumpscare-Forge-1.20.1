@@ -4,8 +4,14 @@ All notable changes to this project will be documented here.
 This project follows [Semantic Versioning](https://semver.org/).
 
 ---
-## [Unreleased]
-- (add changes here as you work)
+## 1.0.1 – 2025-10-30
+> _Probabilities Update_
+### ✨ Features
+- Added Probabilities to Active Jumpscares 
+- Tweaked jumpscare probability for better pacing
+- Fixed overlapping sound playback issue
+- Improved idle detection during menus
+- Added Readme with mod details and credits
 
 ## 1.0.0 – 2025-10-29
 > _Initial Public Release_
