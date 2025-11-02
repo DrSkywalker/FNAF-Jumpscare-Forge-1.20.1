@@ -4,11 +4,20 @@ All notable changes to this project will be documented here.
 This project follows [Semantic Versioning](https://semver.org/).
 
 ---
+## 1.0.7 – 2025-11-02
+
+> _Modrinth and Curseforge Update_
+
+### ✨ Features
+
+- Published the mod on Modrinth and Curseforge for easier access and downloads.
+
 ## 1.0.6 – 2025-10-30
 
 > _XOR and Trash and The Gang Update_
 
 ### ✨ Features
+
 - Added XOR and Trash and The Gang as jumpscare characters
 - Updated characters.json to include XOR and Trash and The Gang
 - Added XOR and Trash and The Gang sound effects

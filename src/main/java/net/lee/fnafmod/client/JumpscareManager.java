@@ -28,19 +28,15 @@ public class JumpscareManager {
     private static final double MIN_COOLDOWN_SECONDS = 10.0;
     private static final int HOLD_LAST_SECS = 0;
     private static final double MAX_FALLBACK_AUDIO_SECS = 12.0;
-
     private static final Gson GSON = new Gson();
     private static final Map<ResourceLocation, int[]> TEX_SIZE_CACHE = new ConcurrentHashMap<>();
     private static final Map<ResourceLocation, SoundEvent> SOUND_CACHE = new ConcurrentHashMap<>();
-
     private static final JumpscareManager INSTANCE = new JumpscareManager();
-
     private final Random rng = new Random();
     private final List<Jumpscare> catalog = new ArrayList<>();
     private final List<Jumpscare> unusedPool = new ArrayList<>();
     private long lastTriggerNs = 0L;
     private long nextCheckAtNanos = -1L;
-
     private Jumpscare active = null;
     private long startNanos = 0L;
     private SimpleSoundInstance playingSound = null;

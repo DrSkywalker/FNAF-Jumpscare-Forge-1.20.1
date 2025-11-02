@@ -48,7 +48,7 @@ public record SpawnMobAfterScareC2S(ResourceLocation mobId, String spawnName, in
         }
         return new SpawnMobAfterScareC2S(id, spawnName, x, y, z, armor);
     }
-
+    @SuppressWarnings("resource")
     public static void handle(SpawnMobAfterScareC2S msg, Supplier<NetworkEvent.Context> ctx) {
         ctx.get().enqueueWork(() -> {
             ServerPlayer sender = ctx.get().getSender();
