@@ -1,17 +1,17 @@
 package net.lee.fnafmod.util;
 
-import net.minecraft.util.RandomSource;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.util.math.random.Random;
 
 public final class ArmorRandomizer {
     private ArmorRandomizer() {
     }
 
-    public static Item pickArmorForSlot(RandomSource rnd, EquipmentSlot slot) {
+    public static Item pickArmorForSlot(Random rnd, EquipmentSlot slot) {
         int mat = rnd.nextInt(5); // 0..4 => leather, iron, gold, diamond, netherite
         return pickArmorForSlot(mat, slot);
     }
@@ -78,18 +78,18 @@ public final class ArmorRandomizer {
         }
     }
 
-    public static void equipRandomArmor(Mob mob, RandomSource rnd, boolean uniformSet) {
+    public static void equipRandomArmor(MobEntity mob, Random rnd, boolean uniformSet) {
         EquipmentSlot[] slots = new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET};
         if (uniformSet) {
             int mat = rnd.nextInt(5);
             for (EquipmentSlot s : slots) {
                 Item item = pickArmorForSlot(mat, s);
-                if (item != Items.AIR) mob.setItemSlot(s, new ItemStack(item));
+                if (item != Items.AIR) mob.equipStack(s, new ItemStack(item));
             }
         } else {
             for (EquipmentSlot s : slots) {
                 Item item = pickArmorForSlot(rnd, s);
-                if (item != Items.AIR) mob.setItemSlot(s, new ItemStack(item));
+                if (item != Items.AIR) mob.equipStack(s, new ItemStack(item));
             }
         }
     }

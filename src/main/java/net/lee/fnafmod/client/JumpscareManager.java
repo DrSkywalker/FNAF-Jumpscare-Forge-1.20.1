@@ -4,13 +4,15 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.lee.fnafmod.network.FnafNet;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.resources.sounds.SimpleSoundInstance;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.packs.resources.Resource;
-import net.minecraft.sounds.SoundEvent;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+import net.lee.fnafmod.network.SpawnMobAfterScarePayload;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.sound.PositionedSoundInstance;
+import net.minecraft.client.sound.SoundInstance;
+import net.minecraft.resource.Resource;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.Identifier;
 
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -29,32 +31,32 @@ public class JumpscareManager {
     private static final int HOLD_LAST_SECS = 0;
     private static final double MAX_FALLBACK_AUDIO_SECS = 12.0;
     private static final Gson GSON = new Gson();
-    private static final Map<ResourceLocation, int[]> TEX_SIZE_CACHE = new ConcurrentHashMap<>();
-    private static final Map<ResourceLocation, SoundEvent> SOUND_CACHE = new ConcurrentHashMap<>();
+    private static final Map<Identifier, int[]> TEX_SIZE_CACHE = new ConcurrentHashMap<>();
+    private static final Map<Identifier, SoundEvent> SOUND_CACHE = new ConcurrentHashMap<>();
     private static final JumpscareManager INSTANCE = new JumpscareManager();
-    private final Random rng = new Random();
+    private final java.util.Random rng = new java.util.Random();
     private final List<Jumpscare> catalog = new ArrayList<>();
     private final List<Jumpscare> unusedPool = new ArrayList<>();
     private long lastTriggerNs = 0L;
     private long nextCheckAtNanos = -1L;
     private Jumpscare active = null;
     private long startNanos = 0L;
-    private SimpleSoundInstance playingSound = null;
+    private SoundInstance playingSound = null;
 
     private JumpscareManager() {
         loadCatalog();
         scheduleNextCheckFromNow();
     }
 
-    private static int[] getTextureSize(ResourceLocation id) {
+    private static int[] getTextureSize(Identifier id) {
         int[] cached = TEX_SIZE_CACHE.get(id);
         if (cached != null) return cached;
 
         try {
-            var rm = Minecraft.getInstance().getResourceManager();
+            var rm = MinecraftClient.getInstance().getResourceManager();
             Optional<Resource> opt = rm.getResource(id);
             if (opt.isPresent()) {
-                try (var in = opt.get().open();
+                try (var in = opt.get().getInputStream();
                      com.mojang.blaze3d.platform.NativeImage img = com.mojang.blaze3d.platform.NativeImage.read(in)) {
                     int[] dims = new int[]{img.getWidth(), img.getHeight()};
                     TEX_SIZE_CACHE.put(id, dims);
@@ -89,11 +91,11 @@ public class JumpscareManager {
         nextCheckAtNanos = nowNs() + randomDelayNs(CHECK_MIN_SECONDS, CHECK_MAX_SECONDS);
     }
 
-    private boolean isIdleContext(Minecraft mc) {
-        return mc.screen != null;
+    private boolean isIdleContext(MinecraftClient mc) {
+        return mc.currentScreen != null;
     }
 
-    private double currentTriggerChance(Minecraft mc) {
+    private double currentTriggerChance(MinecraftClient mc) {
         double chance = BASE_TRIGGER_CHANCE;
         if (isIdleContext(mc)) chance *= IDLE_MULTIPLIER;
         return Math.min(chance, MAX_CHANCE_CLAMP);
@@ -101,12 +103,12 @@ public class JumpscareManager {
 
     private void loadCatalog() {
         try {
-            ResourceLocation manifest = ResourceLocation.tryParse("fnafmod:jumpscares/jumpscares.json");
+            Identifier manifest = Identifier.tryParse("fnafmod:jumpscares/jumpscares.json");
             if (manifest == null) return;
-            Optional<Resource> res = Minecraft.getInstance().getResourceManager().getResource(manifest);
+            Optional<Resource> res = MinecraftClient.getInstance().getResourceManager().getResource(manifest);
             if (res.isEmpty()) return;
             JsonObject root = GSON.fromJson(
-                    new InputStreamReader(res.get().open(), StandardCharsets.UTF_8),
+                    new InputStreamReader(res.get().getInputStream(), StandardCharsets.UTF_8),
                     JsonObject.class
             );
             JsonArray arr = root.getAsJsonArray("entries");
@@ -125,13 +127,13 @@ public class JumpscareManager {
                 // determine whether this entry wants a mob spawn
                 boolean wantsSpawn = e.has("spawn_mob") || (e.has("spawn") && e.get("spawn").getAsBoolean());
 
-                ResourceLocation spawnMobId = null;
+                Identifier spawnMobId = null;
                 String spawnName = null;
                 int offX = 0, offY = 0, offZ = 0;
                 String[] armor = null;
 
                 if (wantsSpawn && e.has("spawn_mob")) {
-                    spawnMobId = ResourceLocation.tryParse(e.get("spawn_mob").getAsString());
+                    spawnMobId = Identifier.tryParse(e.get("spawn_mob").getAsString());
                 }
 
                 if (wantsSpawn && e.has("spawn_name")) {
@@ -157,13 +159,13 @@ public class JumpscareManager {
                 }
 
                 String folderPrefix = folder.endsWith("/") ? folder : (folder + "/");
-                ResourceLocation[] frames = new ResourceLocation[frameCount];
+                Identifier[] frames = new Identifier[frameCount];
                 for (int f = 0; f < frameCount; f++) {
                     String file = String.format(pattern, f + 1);
-                    frames[f] = ResourceLocation.tryParse(folderPrefix + file);
+                    frames[f] = Identifier.tryParse(folderPrefix + file);
                 }
 
-                ResourceLocation soundLoc = ResourceLocation.tryParse(sound);
+                Identifier soundLoc = Identifier.tryParse(sound);
 
                 // construct with spawnName in the correct position
                 catalog.add(new Jumpscare(
@@ -209,9 +211,9 @@ public class JumpscareManager {
         this.active = js;
         this.startNanos = nowNs();
 
-        Minecraft mc = Minecraft.getInstance();
-        SoundEvent se = SOUND_CACHE.computeIfAbsent(js.soundKey(), SoundEvent::createVariableRangeEvent);
-        playingSound = SimpleSoundInstance.forUI(se, 1.0f);
+        MinecraftClient mc = MinecraftClient.getInstance();
+        SoundEvent se = SOUND_CACHE.computeIfAbsent(js.soundKey(), id -> SoundEvent.of(id));
+        playingSound = PositionedSoundInstance.master(se, 1.0f);
         mc.getSoundManager().play(playingSound);
     }
 
@@ -219,7 +221,7 @@ public class JumpscareManager {
         if (active != null) return;
 
         long now = nowNs();
-        Minecraft mc = Minecraft.getInstance();
+        MinecraftClient mc = MinecraftClient.getInstance();
         if (nextCheckAtNanos > 0L && now >= nextCheckAtNanos && !catalog.isEmpty()) {
             double p = currentTriggerChance(mc);
             if (rng.nextDouble() < p) {
@@ -231,9 +233,9 @@ public class JumpscareManager {
         }
     }
 
-    public void render(GuiGraphics g) {
+    public void render(DrawContext g) {
         if (active == null) return;
-        Minecraft mc = Minecraft.getInstance();
+        MinecraftClient mc = MinecraftClient.getInstance();
 
         final double elapsed = (nowNs() - startNanos) / 1_000_000_000.0;
         final double frameDur = 1.0 / Math.max(1, active.fps());
@@ -247,14 +249,14 @@ public class JumpscareManager {
             idx = (int) Math.min(active.frames().length - 1, Math.floor(t / frameDur));
         }
 
-        ResourceLocation frame = active.frames()[idx];
+        Identifier frame = active.frames()[idx];
 
-        int sw = mc.getWindow().getGuiScaledWidth();
-        int sh = mc.getWindow().getGuiScaledHeight();
+        int sw = mc.getWindow().getScaledWidth();
+        int sh = mc.getWindow().getScaledHeight();
 
         // Push a high Z translation and disable depth testing so the jumpscare draws on top
-        g.pose().pushPose();
-        g.pose().translate(0.0F, 0.0F, 1000.0F);
+        g.getMatrices().push();
+        g.getMatrices().translate(0.0F, 0.0F, 1000.0F);
         RenderSystem.disableDepthTest();
 
         // Special-case: XOR should glitch rapidly side-to-side across the bottom of the screen
@@ -278,7 +280,7 @@ public class JumpscareManager {
             int pad = 6;
             int y = sh - drawH - pad;
 
-            g.blit(frame, x, y, drawW, drawH, 0, 0, texW, texH, texW, texH);
+            g.drawTexture(frame, x, y, 0, 0, drawW, drawH, texW, texH);
         } else if ("bottom_left".equalsIgnoreCase(active.anchor())) {
             int[] dims = getTextureSize(frame);
             int texW = dims[0];
@@ -292,9 +294,9 @@ public class JumpscareManager {
             int y = sh - drawH - pad;
 
             // draw with computed position and size
-            g.blit(frame, x, y, drawW, drawH, 0, 0, texW, texH, texW, texH);
+            g.drawTexture(frame, x, y, 0, 0, drawW, drawH, texW, texH);
         } else {
-            g.blit(frame, 0, 0, 0, 0,
+            g.drawTexture(frame, 0, 0, 0, 0,
                     sw,
                     sh,
                     sw,
@@ -303,7 +305,7 @@ public class JumpscareManager {
 
         boolean finish;
         if (active.loop()) {
-            boolean soundActive = (playingSound != null) && mc.getSoundManager().isActive(playingSound);
+            boolean soundActive = (playingSound != null) && mc.getSoundManager().isPlaying(playingSound);
             boolean overFallback = elapsed > MAX_FALLBACK_AUDIO_SECS;
             finish = !soundActive || overFallback;
         } else {
@@ -320,9 +322,9 @@ public class JumpscareManager {
             if (nextCheckAtNanos < soonest) nextCheckAtNanos = soonest;
 
             if (finished != null && finished.spawnMobId() != null) {
-                if (mc.player != null && mc.level != null && mc.screen == null) {
-                    FnafNet.CHANNEL.sendToServer(
-                            new net.lee.fnafmod.network.SpawnMobAfterScareC2S(
+                if (mc.player != null && mc.world != null && mc.currentScreen == null) {
+                    ClientPlayNetworking.send(
+                            new SpawnMobAfterScarePayload(
                                     finished.spawnMobId(),
                                     finished.spawnName(),
                                     finished.spawnOffX(),
@@ -336,6 +338,6 @@ public class JumpscareManager {
         }
 
         RenderSystem.enableDepthTest();
-        g.pose().popPose();
+        g.getMatrices().pop();
     }
 }

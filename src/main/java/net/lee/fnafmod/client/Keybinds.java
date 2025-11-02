@@ -1,19 +1,20 @@
 package net.lee.fnafmod.client;
 
-import net.minecraft.client.KeyMapping;
-import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
+import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.minecraft.client.option.KeyBinding;
+import net.minecraft.client.util.InputUtil;
 import org.lwjgl.glfw.GLFW;
 
 public class Keybinds {
 
-    public static KeyMapping TEST_SCARE;
+    public static KeyBinding TEST_SCARE;
 
-    public static void register(RegisterKeyMappingsEvent e) {
-        TEST_SCARE = new KeyMapping(
+    public static void register() {
+        TEST_SCARE = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 "key.fnafmod.test_scare",
+                InputUtil.Type.KEYSYM,
                 GLFW.GLFW_KEY_F6,
-                "key.categories.fnafmod");
-        e.register(TEST_SCARE);
+                "key.categories.fnafmod"));
     }
 }
 

@@ -1,82 +1,82 @@
 plugins {
-    id 'net.minecraftforge.gradle' version '6.0.+'
+    id 'fabric-loom' version '1.7-SNAPSHOT'
+    id 'maven-publish'
 }
 
 group = 'net.lee'
 def modId = (project.findProperty('modid') ?: 'fnafmod').toString()
-def modVersion = (project.findProperty('mod_version') ?: '1.0.0').toString()
-def mcVersion = (project.findProperty('minecraft_version') ?: '1.20.1').toString()
-def forgeVersion = (project.findProperty('forge_version') ?: '47.4.10').toString()
-def mappingsCh = (project.findProperty('mappings_channel') ?: 'official').toString()
-def mappingsVer = (project.findProperty('mappings_version') ?: mcVersion).toString()
-def modName = (project.findProperty('mod_name') ?: 'FNAF Jumpscare (Forge)').toString()
+def modVersion = (project.findProperty('mod_version') ?: '1.0.8').toString()
+def mcVersion = (project.findProperty('minecraft_version') ?: '1.21.1').toString()
+def fabricApiVersion = (project.findProperty('fabric_api_version') ?: '0.137.0+1.21.1').toString()
+def fabricLoaderVersion = (project.findProperty('fabric_loader_version') ?: '0.16.11').toString()
+def yarnMappings = (project.findProperty('yarn_mappings') ?: '1.21.1+build.3').toString()
+def modName = (project.findProperty('mod_name') ?: 'FNAF Jumpscare (Fabric)').toString()
 def modAuthors = (project.findProperty('mod_authors') ?: 'Lee').toString()
-def modDescription = (project.findProperty('mod_description') ?: 'UCN-style jumpscares on any screen, incl. main menu.').toString()
+def modDescription = (project.findProperty('mod_description') ?: 'UCN-style jumpscares on any screen, including the main menu.').toString()
 
 version = modVersion
+archivesBaseName = modId
 
 java {
-    toolchain { languageVersion = JavaLanguageVersion.of(17) }
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    toolchain { languageVersion = JavaLanguageVersion.of(21) }
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
 
 repositories {
     mavenCentral()
-    maven { url = 'https://maven.minecraftforge.net' }
-}
-
-minecraft {
-    mappings channel: mappingsCh, version: mappingsVer
-
-    runs {
-        client {
-            workingDirectory project.file('run')
-            args '--username', 'Dev'
-        }
+    maven { 
+        name = 'Fabric'
+        url = 'https://maven.fabricmc.net/' 
     }
 }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:${mcVersion}-${forgeVersion}"
+    minecraft "com.mojang:minecraft:${mcVersion}"
+    mappings "net.fabricmc:yarn:${yarnMappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${fabricLoaderVersion}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabricApiVersion}"
 }
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
-    options.release = 17
+    options.release = 21
 }
 
-tasks.named('jar', Jar).configure {
-    archiveBaseName.set(modId)
-    manifest {
-        attributes(
-                'Implementation-Title': modName,
-                'Implementation-Version': modVersion,
-                'Implementation-Vendor': modAuthors
-        )
-    }
-}
-
-tasks.named('processResources', ProcessResources).configure {
-    // Tell Gradle which tokens we will expand (for up-to-date checks)
+processResources {
     inputs.property 'modid', modId
     inputs.property 'mod_version', modVersion
     inputs.property 'mod_name', modName
     inputs.property 'mod_authors', modAuthors
     inputs.property 'mod_description', modDescription
     inputs.property 'minecraft_version', mcVersion
-    inputs.property 'forge_version', forgeVersion
+    inputs.property 'fabric_loader_version', fabricLoaderVersion
 
-    // Expand ONLY mods.toml (avoid touching JSON/other assets)
-    filesMatching('META-INF/mods.toml') {
+    filesMatching('fabric.mod.json') {
         expand([
-                modid            : modId,
-                mod_version      : modVersion,
-                mod_name         : modName,
-                mod_authors      : modAuthors,
-                mod_description  : modDescription,
-                minecraft_version: mcVersion,
-                forge_version    : forgeVersion
+                modid                 : modId,
+                mod_version           : modVersion,
+                mod_name              : modName,
+                mod_authors           : modAuthors,
+                mod_description       : modDescription,
+                minecraft_version     : mcVersion,
+                fabric_loader_version : fabricLoaderVersion
         ])
+    }
+}
+
+jar {
+    from('LICENSE') {
+        rename { "${it}_${project.archivesBaseName}" }
+    }
+}
+
+loom {
+    runs {
+        client {
+            client()
+            setConfigName("Fabric Client")
+            programArgs '--username', 'Dev'
+        }
     }
 }

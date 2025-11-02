@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "${modid}",
+  "version": "${mod_version}",
+  "name": "${mod_name}",
+  "description": "${mod_description}",
+  "authors": [
+    "${mod_authors}"
+  ],
+  "contact": {
+    "homepage": "https://github.com/DrSkywalker/FNAF-Jumpscare",
+    "sources": "https://github.com/DrSkywalker/FNAF-Jumpscare"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.lee.fnafmod.FnafMod"
+    ],
+    "client": [
+      "net.lee.fnafmod.FnafModClient"
+    ]
+  },
+  "mixins": [],
+  "depends": {
+    "fabricloader": ">=${fabric_loader_version}",
+    "minecraft": "~${minecraft_version}",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {}
+}

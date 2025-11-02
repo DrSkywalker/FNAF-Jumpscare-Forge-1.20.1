@@ -1,21 +1,21 @@
 package net.lee.fnafmod.client;
 
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Identifier;
 
-public record Jumpscare(String id, ResourceLocation[] frames, int fps, ResourceLocation soundKey, boolean loop,
-                        String anchor, double scale, ResourceLocation spawnMobId, String spawnName, int spawnOffX,
+public record Jumpscare(String id, Identifier[] frames, int fps, Identifier soundKey, boolean loop,
+                        String anchor, double scale, Identifier spawnMobId, String spawnName, int spawnOffX,
                         int spawnOffY, int spawnOffZ,
                         String[] armor) {
 
     public Jumpscare(
             String id,
-            ResourceLocation[] frames,
+            Identifier[] frames,
             int fps,
-            ResourceLocation soundKey,
+            Identifier soundKey,
             boolean loop,
             String anchor,
             double scale,
-            ResourceLocation spawnMobId,
+            Identifier spawnMobId,
             String spawnName,
             int spawnOffX, int spawnOffY, int spawnOffZ,
             String[] armor
@@ -37,9 +37,9 @@ public record Jumpscare(String id, ResourceLocation[] frames, int fps, ResourceL
 
     public Jumpscare(
             String id,
-            ResourceLocation[] frames,
+            Identifier[] frames,
             int fps,
-            ResourceLocation soundKey
+            Identifier soundKey
     ) {
         this(id, frames, fps, soundKey,
                 false, "fullscreen", 1.0,
@@ -47,7 +47,7 @@ public record Jumpscare(String id, ResourceLocation[] frames, int fps, ResourceL
                 null);
     }
 
-    public static ResourceLocation rl(String full) {
-        return ResourceLocation.tryParse(full);
+    public static Identifier id(String full) {
+        return Identifier.tryParse(full);
     }
 }
