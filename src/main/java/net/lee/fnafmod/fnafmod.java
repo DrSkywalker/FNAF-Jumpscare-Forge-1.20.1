@@ -21,6 +21,7 @@ public class fnafmod {
         MinecraftForge.EVENT_BUS.register(this);
     }
 
+
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(FnafNet::register);
     }

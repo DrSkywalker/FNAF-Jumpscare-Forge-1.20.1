@@ -4,6 +4,15 @@ All notable changes to this project will be documented here.
 This project follows [Semantic Versioning](https://semver.org/).
 
 ---
+
+## 1.0.7 – 2025-11-02
+
+> _Update_
+
+### ⚙️ Technical
+
+- Beginning Work On Adding Mod to More Versions of Minecraft.
+
 ## 1.0.7 – 2025-11-02
 
 > _Modrinth and Curseforge Update_
