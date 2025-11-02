@@ -1,9 +1,18 @@
 pluginManagement {
     repositories {
         maven {
+            name = 'Architectury'
+            url = 'https://maven.architectury.dev/'
+        }
+        maven {
             name = 'Fabric'
             url = 'https://maven.fabricmc.net/'
         }
+        maven {
+            name = 'FabricSnapshot'
+            url = 'https://maven.fabricmc.net/snapshots/'
+        }
+        mavenCentral()
         gradlePluginPortal()
     }
 }
