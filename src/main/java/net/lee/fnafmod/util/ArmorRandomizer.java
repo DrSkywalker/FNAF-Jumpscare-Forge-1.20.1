@@ -28,8 +28,9 @@ public final class ArmorRandomizer {
                         return Items.LEATHER_LEGGINGS;
                     case FEET:
                         return Items.LEATHER_BOOTS;
+                    default:
+                        return Items.AIR;
                 }
-                break;
             case 1: // iron
                 switch (slot) {
                     case HEAD:
@@ -40,8 +41,9 @@ public final class ArmorRandomizer {
                         return Items.IRON_LEGGINGS;
                     case FEET:
                         return Items.IRON_BOOTS;
+                    default:
+                        return Items.AIR;
                 }
-                break;
             case 2: // gold
                 switch (slot) {
                     case HEAD:
@@ -52,8 +54,9 @@ public final class ArmorRandomizer {
                         return Items.GOLDEN_LEGGINGS;
                     case FEET:
                         return Items.GOLDEN_BOOTS;
+                    default:
+                        return Items.AIR;
                 }
-                break;
             case 3: // diamond
                 switch (slot) {
                     case HEAD:
@@ -64,8 +67,9 @@ public final class ArmorRandomizer {
                         return Items.DIAMOND_LEGGINGS;
                     case FEET:
                         return Items.DIAMOND_BOOTS;
+                    default:
+                        return Items.AIR;
                 }
-                break;
             case 4: // netherite
                 switch (slot) {
                     case HEAD:
@@ -76,8 +80,9 @@ public final class ArmorRandomizer {
                         return Items.NETHERITE_LEGGINGS;
                     case FEET:
                         return Items.NETHERITE_BOOTS;
+                    default:
+                        return Items.AIR;
                 }
-                break;
             default:
                 return Items.AIR;
         }

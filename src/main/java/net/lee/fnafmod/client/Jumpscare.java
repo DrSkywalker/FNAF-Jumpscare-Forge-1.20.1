@@ -20,9 +20,10 @@ public record Jumpscare(String id, ResourceLocation[] frames, int fps, ResourceL
 
     // Helper method to compute anchor type
     private static AnchorType computeAnchorType(String id, String anchor) {
+        String normalizedAnchor = normalizeAnchor(anchor);
         if (computeIsXor(id)) {
             return AnchorType.XOR;
-        } else if ("bottom_left".equalsIgnoreCase(anchor)) {
+        } else if ("bottom_left".equalsIgnoreCase(normalizedAnchor)) {
             return AnchorType.BOTTOM_LEFT;
         } else {
             return AnchorType.FULLSCREEN;
@@ -61,7 +62,7 @@ public record Jumpscare(String id, ResourceLocation[] frames, int fps, ResourceL
                 spawnOffY,
                 spawnOffZ,
                 (armor == null) ? null : armor,
-                computeAnchorType(id, normalizeAnchor(anchor)),
+                computeAnchorType(id, anchor),
                 computeIsXor(id)
         );
     }
