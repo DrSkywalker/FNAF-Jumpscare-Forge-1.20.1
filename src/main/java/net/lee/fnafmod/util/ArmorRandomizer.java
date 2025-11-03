@@ -81,7 +81,6 @@ public final class ArmorRandomizer {
             default:
                 return Items.AIR;
         }
-        return Items.AIR;
     }
 
     public static void equipRandomArmor(Mob mob, RandomSource rnd, boolean uniformSet) {

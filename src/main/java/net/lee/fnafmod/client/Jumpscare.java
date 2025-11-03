@@ -13,10 +13,14 @@ public record Jumpscare(String id, ResourceLocation[] frames, int fps, ResourceL
         XOR
     }
 
+    // Helper method to normalize anchor value
+    private static String normalizeAnchor(String anchor) {
+        return (anchor == null || anchor.isEmpty()) ? "fullscreen" : anchor;
+    }
+
     // Helper method to compute anchor type
     private static AnchorType computeAnchorType(String id, String anchor) {
-        boolean isXor = "fnafmod:xor".equalsIgnoreCase(id);
-        if (isXor) {
+        if (computeIsXor(id)) {
             return AnchorType.XOR;
         } else if ("bottom_left".equalsIgnoreCase(anchor)) {
             return AnchorType.BOTTOM_LEFT;
@@ -49,7 +53,7 @@ public record Jumpscare(String id, ResourceLocation[] frames, int fps, ResourceL
                 fps,
                 soundKey,
                 loop,
-                (anchor == null || anchor.isEmpty()) ? "fullscreen" : anchor,
+                normalizeAnchor(anchor),
                 (scale <= 0) ? 1.0 : scale,
                 spawnMobId,
                 (spawnName == null || spawnName.isBlank()) ? null : spawnName,
@@ -57,7 +61,7 @@ public record Jumpscare(String id, ResourceLocation[] frames, int fps, ResourceL
                 spawnOffY,
                 spawnOffZ,
                 (armor == null) ? null : armor,
-                computeAnchorType(id, (anchor == null || anchor.isEmpty()) ? "fullscreen" : anchor),
+                computeAnchorType(id, normalizeAnchor(anchor)),
                 computeIsXor(id)
         );
     }
