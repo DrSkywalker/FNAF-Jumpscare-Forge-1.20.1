@@ -6,7 +6,7 @@ dependencies {
     modApi "dev.architectury:architectury-fabric:${rootProject.architectury_version}"
 
     // Common module
-    implementation project(path: ":common", configuration: "namedElements")
+    implementation project(":common")
 }
 
 processResources {
