@@ -1,0 +1,181 @@
+{
+  "entries": [
+    {
+      "id": "fnafmod:toy_freddy",
+      "folder": "fnafmod:textures/jumpscares/toy_freddy/",
+      "pattern": "toyfreddy_%d.png",
+      "frameCount": 18,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.foxy"
+    },
+    {
+      "id": "fnafmod:toy_bonnie",
+      "folder": "fnafmod:textures/jumpscares/toy_bonnie/",
+      "pattern": "toybonnie_%d.png",
+      "frameCount": 13,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.foxy"
+    },
+    {
+      "id": "fnafmod:toy_chica",
+      "folder": "fnafmod:textures/jumpscares/toy_chica/",
+      "pattern": "toychica_%d.png",
+      "frameCount": 13,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.foxy"
+    },
+    {
+      "id": "fnafmod:mangle",
+      "folder": "fnafmod:textures/jumpscares/mangle/",
+      "pattern": "mangle_%d.png",
+      "frameCount": 16,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.foxy"
+    },
+    {
+      "id": "fnafmod:withered_freddy",
+      "folder": "fnafmod:textures/jumpscares/withered_freddy/",
+      "pattern": "witheredfreddy_%d.png",
+      "frameCount": 35,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.foxy"
+    },
+    {
+      "id": "fnafmod:withered_bonnie",
+      "folder": "fnafmod:textures/jumpscares/withered_bonnie/",
+      "pattern": "witheredbonnie_%d.png",
+      "frameCount": 16,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.foxy"
+    },
+    {
+      "id": "fnafmod:withered_chica",
+      "folder": "fnafmod:textures/jumpscares/withered_chica/",
+      "pattern": "witheredchica_%d.png",
+      "frameCount": 12,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.foxy"
+    },
+    {
+      "id": "fnafmod:withered_foxy",
+      "folder": "fnafmod:textures/jumpscares/withered_foxy/",
+      "pattern": "foxy_%d.png",
+      "frameCount": 14,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.foxy"
+    },
+    {
+      "id": "fnafmod:golden_freddy",
+      "folder": "fnafmod:textures/jumpscares/golden_freddy/",
+      "pattern": "goldenfreddy_%d.png",
+      "frameCount": 13,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.foxy"
+    },
+    {
+      "id": "fnafmod:puppet",
+      "folder": "fnafmod:textures/jumpscares/puppet/",
+      "pattern": "puppet_%d.png",
+      "frameCount": 15,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.foxy"
+    },
+    {
+      "id": "fnafmod:deedee",
+      "loop": true,
+      "folder": "fnafmod:textures/jumpscares/deedee/",
+      "pattern": "deedee_%d.png",
+      "frameCount": 10,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.deedee",
+      "anchor": "bottom_left",
+      "scale": 0.33,
+      "spawn_mob": "minecraft:zombie",
+      "spawn_name": "DeeDee's Contender",
+      "spawn_offset": [
+        0,
+        0,
+        2
+      ],
+      "armor": [
+        "random",
+        "random",
+        "random",
+        "random"
+      ]
+    },
+    {
+      "id": "fnafmod:xor",
+      "loop": true,
+      "folder": "fnafmod:textures/jumpscares/xor/",
+      "pattern": "xor_%d.png",
+      "frameCount": 11,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.xor",
+      "anchor": "bottom_left",
+      "scale": 0.33,
+      "spawn_mob": "minecraft:zombie",
+      "spawn_name": "XOR's Contender",
+      "spawn_offset": [
+        0,
+        0,
+        2
+      ],
+      "armor": [
+        "random",
+        "random",
+        "random",
+        "random"
+      ]
+    },
+    {
+      "id": "fnafmod:trash_gang",
+      "loop": true,
+      "folder": "fnafmod:textures/jumpscares/trash_gang/",
+      "pattern": "trashgang_%d.png",
+      "frameCount": 5,
+      "fps": 10,
+      "sound": "fnafmod:jumpscares.trashgang"
+    },
+    {
+      "id": "fnafmod:springtrap",
+      "folder": "fnafmod:textures/jumpscares/springtrap/",
+      "pattern": "springtrap_%d.png",
+      "frameCount": 41,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.springtrap"
+    },
+    {
+      "id": "fnafmod:molten_freddy",
+      "folder": "fnafmod:textures/jumpscares/molten_freddy/",
+      "pattern": "moltenfreddy_%d.png",
+      "frameCount": 16,
+      "fps": 20,
+      "sound": "fnafmod:jumpscares.salvage"
+    },
+    {
+      "id": "fnafmod:scraptrap",
+      "folder": "fnafmod:textures/jumpscares/scraptrap/",
+      "pattern": "scraptrap_%d.png",
+      "frameCount": 21,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.pizzasim"
+    },
+    {
+      "id": "fnafmod:scrap_baby",
+      "folder": "fnafmod:textures/jumpscares/scrap_baby/",
+      "pattern": "scrapbaby_%d.png",
+      "frameCount": 14,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.pizzasim"
+    },
+    {
+      "id": "fnafmod:lefty",
+      "folder": "fnafmod:textures/jumpscares/lefty/",
+      "pattern": "lefty_%d.png",
+      "frameCount": 21,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.pizzasim"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+loom {
+    silentMojangMappingsLicense()
+}
+
+dependencies {
+    neoForge "net.neoforged:neoforge:${rootProject.neoforge_version}"
+    
+    // Architectury API
+    modApi "dev.architectury:architectury-neoforge:${rootProject.architectury_version}"
+
+    // Common module
+    implementation project(path: ":common", configuration: "namedElements")
+}
+
+processResources {
+    inputs.property "version", rootProject.mod_version
+
+    filesMatching("META-INF/neoforge.mods.toml") {
+        expand "version": rootProject.mod_version,
+               "minecraft_version": rootProject.minecraft_version,
+               "neoforge_version": rootProject.neoforge_version,
+               "architectury_version": rootProject.architectury_version
+    }
+}

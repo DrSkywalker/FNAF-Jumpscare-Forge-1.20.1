@@ -1,0 +1,34 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "fnafmod"
+version = "${version}"
+displayName = "FNAF Jumpscare Mod"
+authors = "Lee"
+description = '''FNAF jumpscares on any screen, including the main menu.'''
+logoFile = "logo.png"
+
+[[mixins]]
+
+[[dependencies.fnafmod]]
+modId = "neoforge"
+mandatory = true
+versionRange = "[${neoforge_version},)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.fnafmod]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[${minecraft_version}]"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.fnafmod]]
+modId = "architectury"
+mandatory = true
+versionRange = "[${architectury_version},)"
+ordering = "AFTER"
+side = "BOTH"

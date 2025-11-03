@@ -1,0 +1,62 @@
+{
+  "jumpscares.foxy": {
+    "sounds": [
+      {
+        "name": "fnafmod:jumpscares/foxy",
+        "stream": false
+      }
+    ]
+  },
+  "jumpscares.deedee": {
+    "sounds": [
+      {
+        "name": "fnafmod:jumpscares/deedee1",
+        "stream": false
+      },
+      {
+        "name": "fnafmod:jumpscares/deedee2",
+        "stream": false
+      }
+    ]
+  },
+  "jumpscares.xor": {
+    "sounds": [
+      {
+        "name": "fnafmod:jumpscares/xor",
+        "stream": false
+      }
+    ]
+  },
+  "jumpscares.trashgang": {
+    "sounds": [
+      {
+        "name": "fnafmod:jumpscares/trash_gang",
+        "stream": false
+      }
+    ]
+  },
+  "jumpscares.springtrap": {
+    "sounds": [
+      {
+        "name": "fnafmod:jumpscares/springtrap",
+        "stream": false
+      }
+    ]
+  },
+  "jumpscares.salvage": {
+    "sounds": [
+      {
+        "name": "fnafmod:jumpscares/salvage",
+        "stream": false
+      }
+    ]
+  },
+  "jumpscares.pizzasim": {
+    "sounds": [
+      {
+        "name": "fnafmod:jumpscares/pizzasim",
+        "stream": false
+      }
+    ]
+  }
+}

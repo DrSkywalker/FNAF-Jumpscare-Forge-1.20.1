@@ -1,0 +1,26 @@
+loom {
+    silentMojangMappingsLicense()
+}
+
+dependencies {
+    modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
+    modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
+    
+    // Architectury API
+    modApi "dev.architectury:architectury-fabric:${rootProject.architectury_version}"
+
+    // Common module
+    implementation project(path: ":common", configuration: "namedElements")
+}
+
+processResources {
+    inputs.property "version", rootProject.mod_version
+
+    filesMatching("fabric.mod.json") {
+        expand "version": rootProject.mod_version,
+               "minecraft_version": rootProject.minecraft_version,
+               "fabric_loader_version": rootProject.fabric_loader_version,
+               "fabric_api_version": rootProject.fabric_api_version,
+               "architectury_version": rootProject.architectury_version
+    }
+}
