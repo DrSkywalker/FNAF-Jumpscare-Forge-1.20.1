@@ -29,6 +29,7 @@ public final class ArmorRandomizer {
                     case FEET:
                         return Items.LEATHER_BOOTS;
                 }
+                break;
             case 1: // iron
                 switch (slot) {
                     case HEAD:
@@ -40,6 +41,7 @@ public final class ArmorRandomizer {
                     case FEET:
                         return Items.IRON_BOOTS;
                 }
+                break;
             case 2: // gold
                 switch (slot) {
                     case HEAD:
@@ -51,6 +53,7 @@ public final class ArmorRandomizer {
                     case FEET:
                         return Items.GOLDEN_BOOTS;
                 }
+                break;
             case 3: // diamond
                 switch (slot) {
                     case HEAD:
@@ -62,6 +65,7 @@ public final class ArmorRandomizer {
                     case FEET:
                         return Items.DIAMOND_BOOTS;
                 }
+                break;
             case 4: // netherite
                 switch (slot) {
                     case HEAD:
@@ -73,9 +77,11 @@ public final class ArmorRandomizer {
                     case FEET:
                         return Items.NETHERITE_BOOTS;
                 }
+                break;
             default:
                 return Items.AIR;
         }
+        return Items.AIR;
     }
 
     public static void equipRandomArmor(Mob mob, RandomSource rnd, boolean uniformSet) {

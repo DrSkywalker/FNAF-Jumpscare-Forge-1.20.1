@@ -40,6 +40,11 @@ public class JumpscareManager {
     private Jumpscare active = null;
     private long startNanos = 0L;
     private SimpleSoundInstance playingSound = null;
+    
+    // Cache for current active jumpscare to avoid repeated calculations
+    private int[] cachedTextureDims = null;
+    private double cachedFrameDur = 0.0;
+    private double cachedTotalAnim = 0.0;
 
     private JumpscareManager() {
         loadCatalog();
@@ -208,6 +213,13 @@ public class JumpscareManager {
         if (active != null) return;
         this.active = js;
         this.startNanos = nowNs();
+        
+        // Pre-compute values that will be used in every render call
+        this.cachedFrameDur = 1.0 / Math.max(1, js.fps());
+        if (!js.loop()) {
+            this.cachedTotalAnim = js.frames().length * cachedFrameDur + HOLD_LAST_SECS;
+        }
+        this.cachedTextureDims = null; // Will be computed on first render if needed
 
         Minecraft mc = Minecraft.getInstance();
         SoundEvent se = SOUND_CACHE.computeIfAbsent(js.soundKey(), SoundEvent::createVariableRangeEvent);
@@ -236,15 +248,13 @@ public class JumpscareManager {
         Minecraft mc = Minecraft.getInstance();
 
         final double elapsed = (nowNs() - startNanos) / 1_000_000_000.0;
-        final double frameDur = 1.0 / Math.max(1, active.fps());
 
         int idx;
         if (active.loop()) {
-            idx = (int) Math.floor(elapsed / frameDur) % active.frames().length;
+            idx = (int) Math.floor(elapsed / cachedFrameDur) % active.frames().length;
         } else {
-            double totalAnim = active.frames().length * frameDur + HOLD_LAST_SECS;
-            double t = Math.min(elapsed, totalAnim);
-            idx = (int) Math.min(active.frames().length - 1, Math.floor(t / frameDur));
+            double t = Math.min(elapsed, cachedTotalAnim);
+            idx = (int) Math.min(active.frames().length - 1, Math.floor(t / cachedFrameDur));
         }
 
         ResourceLocation frame = active.frames()[idx];
@@ -257,48 +267,58 @@ public class JumpscareManager {
         g.pose().translate(0.0F, 0.0F, 1000.0F);
         RenderSystem.disableDepthTest();
 
-        // Special-case: XOR should glitch rapidly side-to-side across the bottom of the screen
-        if ("fnafmod:xor".equalsIgnoreCase(active.id())) {
-            int[] dims = getTextureSize(frame);
-            int texW = dims[0];
-            int texH = dims[1];
+        // Use pre-computed anchor type instead of string comparisons
+        switch (active.anchorType()) {
+            case XOR -> {
+                // Lazy-load texture dimensions only when needed
+                if (cachedTextureDims == null) {
+                    cachedTextureDims = getTextureSize(frame);
+                }
+                int texW = cachedTextureDims[0];
+                int texH = cachedTextureDims[1];
 
-            int drawH = (int) Math.max(16, sh * active.scale());
-            int drawW = Math.max(16, (int) Math.round(drawH * (texW / (double) texH)));
+                int drawH = (int) Math.max(16, sh * active.scale());
+                int drawW = Math.max(16, (int) Math.round(drawH * (texW / (double) texH)));
 
-            // Fast oscillation frequency (Hz). Increase for more rapid movement.
-            double freqHz = 8.0;
-            double t = elapsed;
+                // Fast oscillation frequency (Hz). Increase for more rapid movement.
+                double freqHz = 8.0;
 
-            // Smooth ping-pong across the available horizontal range using sine
-            double factor = (Math.sin(t * Math.PI * 2.0 * freqHz) + 1.0) * 0.5;
-            int x = (int) Math.round(factor * Math.max(0, sw - drawW));
+                // Smooth ping-pong across the available horizontal range using sine
+                double factor = (Math.sin(elapsed * Math.PI * 2.0 * freqHz) + 1.0) * 0.5;
+                int x = (int) Math.round(factor * Math.max(0, sw - drawW));
 
-            // keep at bottom with small padding
-            int pad = 6;
-            int y = sh - drawH - pad;
+                // keep at bottom with small padding
+                int pad = 6;
+                int y = sh - drawH - pad;
 
-            g.blit(frame, x, y, drawW, drawH, 0, 0, texW, texH, texW, texH);
-        } else if ("bottom_left".equalsIgnoreCase(active.anchor())) {
-            int[] dims = getTextureSize(frame);
-            int texW = dims[0];
-            int texH = dims[1];
+                g.blit(frame, x, y, drawW, drawH, 0, 0, texW, texH, texW, texH);
+            }
+            case BOTTOM_LEFT -> {
+                // Lazy-load texture dimensions only when needed
+                if (cachedTextureDims == null) {
+                    cachedTextureDims = getTextureSize(frame);
+                }
+                int texW = cachedTextureDims[0];
+                int texH = cachedTextureDims[1];
 
-            int drawH = (int) Math.max(16, sh * active.scale());
-            int drawW = Math.max(16, (int) Math.round(drawH * (texW / (double) texH)));
+                int drawH = (int) Math.max(16, sh * active.scale());
+                int drawW = Math.max(16, (int) Math.round(drawH * (texW / (double) texH)));
 
-            int pad = 6;
-            int x = pad;
-            int y = sh - drawH - pad;
+                int pad = 6;
+                int x = pad;
+                int y = sh - drawH - pad;
 
-            // draw with computed position and size
-            g.blit(frame, x, y, drawW, drawH, 0, 0, texW, texH, texW, texH);
-        } else {
-            g.blit(frame, 0, 0, 0, 0,
-                    sw,
-                    sh,
-                    sw,
-                    sh);
+                // draw with computed position and size
+                g.blit(frame, x, y, drawW, drawH, 0, 0, texW, texH, texW, texH);
+            }
+            default -> {
+                // FULLSCREEN
+                g.blit(frame, 0, 0, 0, 0,
+                        sw,
+                        sh,
+                        sw,
+                        sh);
+            }
         }
 
         boolean finish;
@@ -307,14 +327,14 @@ public class JumpscareManager {
             boolean overFallback = elapsed > MAX_FALLBACK_AUDIO_SECS;
             finish = !soundActive || overFallback;
         } else {
-            double endAt = active.frames().length * frameDur + HOLD_LAST_SECS;
-            finish = elapsed > endAt;
+            finish = elapsed > cachedTotalAnim;
         }
 
         if (finish) {
             Jumpscare finished = active;
             active = null;
             playingSound = null;
+            cachedTextureDims = null; // Clear cache
 
             long soonest = nowNs() + (long) (MIN_COOLDOWN_SECONDS * 1_000_000_000L);
             if (nextCheckAtNanos < soonest) nextCheckAtNanos = soonest;
