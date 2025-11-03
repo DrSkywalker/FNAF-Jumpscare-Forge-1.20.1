@@ -17,6 +17,10 @@ subprojects {
         archivesName = "${rootProject.archives_base_name}-${project.name}"
     }
 
+    loom {
+        silentMojangMappingsLicense()
+    }
+
     repositories {
         mavenCentral()
         maven { url = 'https://maven.architectury.dev/' }
@@ -40,10 +44,6 @@ subprojects {
     tasks.withType(JavaCompile).configureEach {
         options.encoding = 'UTF-8'
         options.release = 21
-    }
-
-    loom {
-        silentMojangMappingsLicense()
     }
 }
 
