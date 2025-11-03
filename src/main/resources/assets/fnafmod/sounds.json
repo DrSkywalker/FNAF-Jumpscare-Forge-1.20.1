@@ -34,5 +34,13 @@
         "stream": false
       }
     ]
+  },
+  "jumpscares.springtrap": {
+    "sounds": [
+      {
+        "name": "fnafmod:jumpscares/springtrap",
+        "stream": false
+      }
+    ]
   }
 }

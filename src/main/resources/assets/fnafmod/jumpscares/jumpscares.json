@@ -136,6 +136,14 @@
       "frameCount": 5,
       "fps": 10,
       "sound": "fnafmod:jumpscares.trashgang"
+    },
+    {
+      "id": "fnafmod:springtrap",
+      "folder": "fnafmod:textures/jumpscares/springtrap/",
+      "pattern": "springtrap_%d.png",
+      "frameCount": 41,
+      "fps": 24,
+      "sound": "fnafmod:jumpscares.springtrap"
     }
   ]
 }

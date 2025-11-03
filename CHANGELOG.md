@@ -4,6 +4,17 @@ All notable changes to this project will be documented here.
 This project follows [Semantic Versioning](https://semver.org/).
 
 ---
+## 1.0.9 – 2025-11-02
+
+> _SpringTrap Update_
+
+### ✨ Features
+
+- Added SpringTrap as a jumpscare character
+- Added SpringTrap sound effects
+- Added SpringTrap animated PNG frames
+- Updated characters.json to include SpringTrap
+
 ## 1.0.8 – 2025-11-02
 
 > _Update_
