@@ -1,7 +1,3 @@
-loom {
-    silentMojangMappingsLicense()
-}
-
 dependencies {
     // Architectury API
     modImplementation "dev.architectury:architectury:${rootProject.architectury_version}"

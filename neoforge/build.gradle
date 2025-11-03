@@ -1,7 +1,3 @@
-loom {
-    silentMojangMappingsLicense()
-}
-
 dependencies {
     neoForge "net.neoforged:neoforge:${rootProject.neoforge_version}"
     
