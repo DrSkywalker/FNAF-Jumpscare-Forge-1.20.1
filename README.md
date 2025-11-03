@@ -14,6 +14,17 @@ Experience randomized FNAF–style jumpscares that can happen **anywhere**, even
 
 ---
 
+### List of Jumpscares Characters
+- FNAF 2 Cast: Toy Freddy, Toy Bonnie, Toy Chica, Withered Freddy, Withered Bonnie, Withered Chica, Withered Foxy, Withered Golden Freddy, Mangle, Puppet
+- FNAF Pizza Simulator: Scraptrap, Lefty, Molten Freddy, Scrap Baby
+- FNAF 3: Springtrap
+- FNAF Ultimate Custom Night: DeeDee, XOR, Trash and The Gang
+
+### Special Character abilities
+- **DeeDee**: Can Spawn Random Armored Zombies in the World when she Jumpscares you.
+- **XOR**: Has a Unique Jumpscare Animation based on his UCN Appearance and does the same thing as DeeDee by Spawning Random Armored Zombies in the World when he Jumpscares you.
+
+---
 ## 👻 Features
 
 - 🪞 **Full-Screen Jumpscares** — Animated frame-by-frame GIF-style scares

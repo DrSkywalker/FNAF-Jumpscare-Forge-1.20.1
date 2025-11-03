@@ -42,5 +42,21 @@
         "stream": false
       }
     ]
+  },
+  "jumpscares.salvage": {
+    "sounds": [
+      {
+        "name": "fnafmod:jumpscares/salvage",
+        "stream": false
+      }
+    ]
+  },
+  "jumpscares.pizzasim": {
+    "sounds": [
+      {
+        "name": "fnafmod:jumpscares/pizzasim",
+        "stream": false
+      }
+    ]
   }
 }

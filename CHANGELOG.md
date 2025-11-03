@@ -4,6 +4,25 @@ All notable changes to this project will be documented here.
 This project follows [Semantic Versioning](https://semver.org/).
 
 ---
+## 1.1 – 2025-11-02
+
+> _Pizza Sim Update_
+
+### ✨ Features
+
+- Added Pizza Sim characters as jumpscare characters
+- Added Pizza Sim sound effects
+- Now FNAF 2, FNAF Pizza Sim, SpringTrap, DeeDee, XOR, and Trash and The Gang are included!
+
+### ⚙️ Technical
+
+- Fixed minor bugs
+- Updated Jumpscate timer for better pacing
+- Updated Readme with new mod details and credits
+- Updated Jumpscare probabilities for better experience
+- Improved performance
+- Removed Herobrine 
+
 ## 1.0.9 – 2025-11-02
 
 > _SpringTrap Update_
