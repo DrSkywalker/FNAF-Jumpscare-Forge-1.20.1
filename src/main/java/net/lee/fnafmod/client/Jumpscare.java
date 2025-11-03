@@ -13,6 +13,23 @@ public record Jumpscare(String id, ResourceLocation[] frames, int fps, ResourceL
         XOR
     }
 
+    // Helper method to compute anchor type
+    private static AnchorType computeAnchorType(String id, String anchor) {
+        boolean isXor = "fnafmod:xor".equalsIgnoreCase(id);
+        if (isXor) {
+            return AnchorType.XOR;
+        } else if ("bottom_left".equalsIgnoreCase(anchor)) {
+            return AnchorType.BOTTOM_LEFT;
+        } else {
+            return AnchorType.FULLSCREEN;
+        }
+    }
+
+    // Helper method to check if ID is XOR
+    private static boolean computeIsXor(String id) {
+        return "fnafmod:xor".equalsIgnoreCase(id);
+    }
+
     public Jumpscare(
             String id,
             ResourceLocation[] frames,
@@ -26,29 +43,23 @@ public record Jumpscare(String id, ResourceLocation[] frames, int fps, ResourceL
             int spawnOffX, int spawnOffY, int spawnOffZ,
             String[] armor
     ) {
-        this.id = id;
-        this.frames = frames;
-        this.fps = fps;
-        this.soundKey = soundKey;
-        this.loop = loop;
-        this.anchor = (anchor == null || anchor.isEmpty()) ? "fullscreen" : anchor;
-        this.scale = (scale <= 0) ? 1.0 : scale;
-        this.spawnMobId = spawnMobId;
-        this.spawnName = (spawnName == null || spawnName.isBlank()) ? null : spawnName;
-        this.spawnOffX = spawnOffX;
-        this.spawnOffY = spawnOffY;
-        this.spawnOffZ = spawnOffZ;
-        this.armor = (armor == null) ? null : armor;
-        
-        // Pre-compute anchor type and special behavior for performance
-        this.isXor = "fnafmod:xor".equalsIgnoreCase(id);
-        if (this.isXor) {
-            this.anchorType = AnchorType.XOR;
-        } else if ("bottom_left".equalsIgnoreCase(this.anchor)) {
-            this.anchorType = AnchorType.BOTTOM_LEFT;
-        } else {
-            this.anchorType = AnchorType.FULLSCREEN;
-        }
+        this(
+                id,
+                frames,
+                fps,
+                soundKey,
+                loop,
+                (anchor == null || anchor.isEmpty()) ? "fullscreen" : anchor,
+                (scale <= 0) ? 1.0 : scale,
+                spawnMobId,
+                (spawnName == null || spawnName.isBlank()) ? null : spawnName,
+                spawnOffX,
+                spawnOffY,
+                spawnOffZ,
+                (armor == null) ? null : armor,
+                computeAnchorType(id, (anchor == null || anchor.isEmpty()) ? "fullscreen" : anchor),
+                computeIsXor(id)
+        );
     }
 
     public Jumpscare(
@@ -60,7 +71,7 @@ public record Jumpscare(String id, ResourceLocation[] frames, int fps, ResourceL
         this(id, frames, fps, soundKey,
                 false, "fullscreen", 1.0,
                 null, null, 0, 0, 0,
-                null, AnchorType.FULLSCREEN, false);
+                null);
     }
 
     public static ResourceLocation rl(String full) {
