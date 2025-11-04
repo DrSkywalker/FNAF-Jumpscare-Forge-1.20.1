@@ -4,7 +4,7 @@
 1. ✅ Created multi-loader project structure (common, fabric, neoforge modules)
 2. ✅ Updated root build.gradle with Architectury configuration
 3. ✅ Updated settings.gradle with multi-loader repository configuration
-4. ✅ Updated gradle.properties with multi-loader dependencies
+4. ✅ Updated gradle.properties with multi-loader dependencies for Minecraft 1.21.9
 5. ✅ Created common module build.gradle and moved platform-agnostic code
 6. ✅ Created fabric module with Fabric-specific entrypoint and build configuration
 7. ✅ Created neoforge module with NeoForge-specific entrypoint and build configuration
@@ -13,30 +13,15 @@
 10. ✅ Implemented platform-specific networking abstraction
 11. ✅ Implemented platform-specific event system abstraction
 12. ✅ Moved shared resources to common module
+13. ✅ Updated to Minecraft 1.21.9 with matching Fabric Loader, Fabric API, and NeoForge versions
 
-## Current Issue:
-The Architectury plugin SNAPSHOT versions (`dev.architectury.loom:1.3-SNAPSHOT` and `architectury-plugin:3.4-SNAPSHOT`) cannot be resolved from the configured Maven repositories. This affects both the project and the provided template (https://github.com/DrSkywalker/Template-Architectury).
-
-### Attempted versions:
-- 1.11-SNAPSHOT (from template) - not found
-- 1.7-SNAPSHOT - not found
-- 1.6-SNAPSHOT - not found  
-- 1.4-SNAPSHOT - not found
-- 1.3-SNAPSHOT (from official Architectury templates) - not found
-- Various release versions (1.7.410, 1.6.397) - not found
-
-### Repositories tested:
-- https://maven.fabricmc.net/
-- https://maven.architectury.dev/
-- https://maven.architectury.dev/snapshot
-- https://maven.neoforged.net/releases
-- Gradle Plugin Portal
-
-## Next Steps:
-Need clarification on:
-1. Correct Architectury versions for Minecraft 1.20.1, or
-2. Working template/example for Minecraft 1.20.1, or
-3. Alternative multi-loader approach without Architectury
+## Version Updates:
+- Minecraft: 1.20.1 → 1.21.9
+- Fabric Loader: 0.16.7 → 0.17.3
+- Fabric API: 0.92.2+1.20.1 → 0.134.0+1.21.9
+- NeoForge: 47.1.106 → 21.9.0-beta
+- Java: 17 → 21
+- Architectury Loom: 1.3-SNAPSHOT → 1.11-SNAPSHOT
 
 ## Code Structure:
 All code has been properly migrated to the multi-loader structure:
@@ -44,4 +29,4 @@ All code has been properly migrated to the multi-loader structure:
 - **fabric/**: Fabric-specific implementations (FabricNetworkHandler, FabricClientEventHandler, entrypoints)
 - **neoforge/**: NeoForge-specific implementations (NeoForgeNetworkHandler, NeoForgeClientEventHandler, entrypoints)
 
-The migration is structurally complete and ready to build once the correct Architectury versions are identified.
+The migration is structurally complete and uses the template configuration for Minecraft 1.21.9. Ready for build testing once Architectury SNAPSHOT dependencies are resolved.
