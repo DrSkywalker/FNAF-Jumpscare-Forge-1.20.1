@@ -4,6 +4,18 @@ All notable changes to this project will be documented here.
 This project follows [Semantic Versioning](https://semver.org/).
 
 ---
+## 1.3.2 – 2025-11-05
+
+>  _Crash Fix Update_
+
+### ⚙️ Technical
+
+- I Am Dumb And I Didn't Change The Version Number Of MC.
+- Changed Timing and Chances For Jumpscares
+- Downgraded to 1.21.9 for Fabric and NeoForge.
+    - Due to Architectury API not being load on 1.21.10.
+        - will be fixed on next Architectury update.
+
 ## 1.3.0 – 2025-11-05
 
 >  _Crash Fix Update_
