@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f34d357-e9cc-4fd6-a406-e868347d62a4" name="Changes" comment="Downgraded to 1.21.9 due to Architectury API Loading Issue (Correct NeoForge Now)">
+    <list default="true" id="5f34d357-e9cc-4fd6-a406-e868347d62a4" name="Changes" comment="I Am Stupid">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___fabric__fabric.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___fabric__fabric.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___neoforge__neoforge.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___neoforge__neoforge.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fabric/src/main/resources/fabric.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/fabric/src/main/resources/fabric.mod.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -301,7 +305,8 @@
       <workItem from="1762373159537" duration="239000" />
       <workItem from="1762374825750" duration="999000" />
       <workItem from="1762375869170" duration="127000" />
-      <workItem from="1762376493899" duration="21000" />
+      <workItem from="1762376493899" duration="103000" />
+      <workItem from="1762377455904" duration="744000" />
     </task>
     <task id="LOCAL-00001" summary="Fixes">
       <option name="closed" value="true" />
@@ -447,7 +452,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762375941982</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="I Am Stupid">
+      <option name="closed" value="true" />
+      <created>1762376580388</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1762376580388</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -475,7 +488,8 @@
     <MESSAGE value="Added to CurseForge" />
     <MESSAGE value="Downgraded to 1.21.9 due to Architectury API Loading Issue" />
     <MESSAGE value="Downgraded to 1.21.9 due to Architectury API Loading Issue (Correct NeoForge Now)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Downgraded to 1.21.9 due to Architectury API Loading Issue (Correct NeoForge Now)" />
+    <MESSAGE value="I Am Stupid" />
+    <option name="LAST_COMMIT_MESSAGE" value="I Am Stupid" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

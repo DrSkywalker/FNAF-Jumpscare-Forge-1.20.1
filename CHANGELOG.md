@@ -4,6 +4,11 @@ All notable changes to this project will be documented here.
 This project follows [Semantic Versioning](https://semver.org/).
 
 ---
+## 1.3.3 – 2025-11-05
+
+> _I Am Dumb And I Didn't Change The Version Number Of MC._
+
+
 ## 1.3.2 – 2025-11-05
 
 >  _Crash Fix Update_
