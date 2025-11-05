@@ -16,7 +16,7 @@ logoFile = "logo.png"
 [[dependencies.fnafmod]]
 modId = "neoforge"
 type = "required"
-versionRange = "[21.9.0-beta,)"
+versionRange = "[21.9.16-beta,)"
 ordering = "NONE"
 side = "BOTH"
 
