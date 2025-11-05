@@ -3,6 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Modrinth](https://img.shields.io/modrinth/dt/9nI9f8QD?color=00AF5C&label=downloads&logo=modrinth)](https://modrinth.com/mod/fnaf-random-jumpscares)
 [![CurseForge Downloads](https://cf.way2muchnoise.eu/full_1375022_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/fnaf-random-jumpscares)
+[![GitHub Downloads](https://img.shields.io/github/downloads/DrSkywalker/FNAF-Jumpscare/total?label=GitHub%20Downloads&logo=github&style=flat)](https://github.com/DrSkywalker/FNAF-Jumpscare/releases)
 [![GitHub Release](https://img.shields.io/github/v/release/DrSkywalker/FNAF-Jumpscare-Forge-1.20.1?style=color=blue&label=release&logo=github&logoColor=white)](https://github.com/DrSkywalker/FNAF-Jumpscare-Forge-1.20.1/releases)
 [![Available on Fabric](https://img.shields.io/badge/Available%20on-Fabric-00AF5C?logo=FabricMC&logoColor=white)](https://modrinth.com/mod/fnaf-random-jumpscares)
 [![Available on NeoForge](https://img.shields.io/badge/Available%20on-NeoForge-7A3BFF?logo=neoforge&logoColor=white)](https://modrinth.com/mod/fnaf-random-jumpscares)

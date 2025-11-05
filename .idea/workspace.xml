@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f34d357-e9cc-4fd6-a406-e868347d62a4" name="Changes" comment="Update!" />
+    <list default="true" id="5f34d357-e9cc-4fd6-a406-e868347d62a4" name="Changes" comment="Added to CurseForge">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/lee/fnafmod/client/JumpscareManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/lee/fnafmod/client/JumpscareManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,7 +85,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/DrSkywalker/FNAF-Jumpscares-Arch.git&quot;,
+    &quot;url&quot;: &quot;https://github.com/DrSkywalker/FNAF-Jumpscare.git&quot;,
     &quot;accountId&quot;: &quot;a3be9cb6-3c88-4381-8db4-8c4eebacfe2a&quot;
   }
 }</component>
@@ -119,7 +125,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Arch&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/FNAF-Jumpscare/common&quot;,
@@ -294,6 +300,9 @@
       <workItem from="1762367904603" duration="1811000" />
       <workItem from="1762369792518" duration="92000" />
       <workItem from="1762370016703" duration="1849000" />
+      <workItem from="1762372273474" duration="292000" />
+      <workItem from="1762373159537" duration="239000" />
+      <workItem from="1762374825750" duration="726000" />
     </task>
     <task id="LOCAL-00001" summary="Fixes">
       <option name="closed" value="true" />
@@ -415,11 +424,30 @@
       <option name="project" value="LOCAL" />
       <updated>1762371875764</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added to CurseForge">
+      <option name="closed" value="true" />
+      <created>1762372525587</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1762372525587</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixes" />
@@ -429,7 +457,8 @@
     <MESSAGE value="Math EVEN MORE FREAKING MATH I HATE MATH HELP MATH IS FINALLY DONE" />
     <MESSAGE value="Math is finally done" />
     <MESSAGE value="Update!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update!" />
+    <MESSAGE value="Added to CurseForge" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added to CurseForge" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

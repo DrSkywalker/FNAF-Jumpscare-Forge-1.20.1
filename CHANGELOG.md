@@ -4,6 +4,17 @@ All notable changes to this project will be documented here.
 This project follows [Semantic Versioning](https://semver.org/).
 
 ---
+## 1.3.0 – 2025-11-05
+
+>  _Crash Fix Update_
+
+### ⚙️ Technical
+
+- Changed Timing and Chances For Jumpscares
+- Downgraded to 1.21.9 for Fabric and NeoForge.
+  - Due to Architectury API not being load on 1.21.10.
+    - will be fixed on next Architectury update.
+
 ## 1.2.1 – 2025-11-05
 
 > _Modrinth and Curseforge Update_

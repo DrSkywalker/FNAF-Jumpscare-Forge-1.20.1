@@ -20,11 +20,11 @@ public class JumpscareManager {
 
     private static final long MIN_RETRIGGER_NS = 250_000_000L;
     private static final double CHECK_MIN_SECONDS = 60.0;
-    private static final double CHECK_MAX_SECONDS = 120.0;
-    private static final double BASE_TRIGGER_CHANCE = 0.5;
+    private static final double CHECK_MAX_SECONDS = 240.0;
+    private static final double BASE_TRIGGER_CHANCE = 0.25;
     private static final double IDLE_MULTIPLIER = 1;
     private static final double MAX_CHANCE_CLAMP = 0.85;
-    private static final double MIN_COOLDOWN_SECONDS = 10.0;
+    private static final double MIN_COOLDOWN_SECONDS = 30.0;
     private static final int HOLD_LAST_SECS = 0;
     private static final double MAX_FALLBACK_AUDIO_SECS = 12.0;
     private static final Gson GSON = new Gson();
