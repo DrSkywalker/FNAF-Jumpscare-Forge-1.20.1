@@ -1,0 +1,31 @@
+modLoader = "javafml"
+loaderVersion = "[10,)"
+issueTrackerURL = "https://github.com/DrSkywalker/FNAF-Jumpscares/issues"
+license = "MIT"
+
+[[mods]]
+modId = "fnafmod"
+version = "${version}"
+displayName = "FNAF-Jumpscare"
+authors = "CodingSkywalker"
+description = '''
+FNAF jumpscares on any screen, including the main menu.
+'''
+logoFile = "logo.png"
+
+[[dependencies.fnafmod]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.9.0-beta,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.fnafmod]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.10,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[mixins]]
+config = "fnafmod.mixins.json"

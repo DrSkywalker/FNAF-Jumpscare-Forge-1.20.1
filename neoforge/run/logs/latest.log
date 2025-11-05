@@ -1,0 +1,79 @@
+[14:40:12] [main/INFO] (Entrypoint) JVM Uptime at startup: 9367ms
+[14:40:12] [main/INFO] (FMLLoader) Starting FancyModLoader version 10.0.29 (CLIENT in DEV)
+[14:40:12] [main/INFO] (FMLLoader) Game directory: D:\FNAF-Jumpscare\neoforge\run
+[14:40:12] [main/INFO] (EarlyServiceDiscovery) Found 2 early service jars (out of 125) in 27ms
+[14:40:12] [main/INFO] (FMLLoader) Loading FML Early Services:
+[14:40:12] [main/INFO] (FMLLoader)  - C:/Users/leevo/.gradle/caches/fabric-loom/forge/transformed-dependencies-v1/net/neoforged/fancymodloader/b23a86e2c1c143c84c6d7668772f419238bf39e00831d9f9ccb259f35b3ddb36/loader/10.0.29/loader-10.0.29.jar
+[14:40:12] [main/INFO] (FMLLoader)  - C:/Users/leevo/.gradle/caches/modules-2/files-2.1/net.neoforged.fancymodloader/earlydisplay/10.0.29/6268812ffd0c16cc1eea921b2335d58585384574/earlydisplay-10.0.29.jar
+[14:40:12] [main/INFO] (ImmediateWindowHandler) Loading ImmediateWindowProvider fmlearlywindow
+[14:40:12] [ForkJoinPool.commonPool-worker-2/INFO] (GameLocator) Detected a joined NeoForge and Minecraft configuration. Applying filtering...
+[14:40:12] [ForkJoinPool.commonPool-worker-2/INFO] (ModDiscoverer) Found mod file "client-extra.jar" [locator: game locator]
+[14:40:12] [ForkJoinPool.commonPool-worker-2/INFO] (ModDiscoverer) Found mod file "neoforge-21.10.47-beta-minecraft-merged-1.21.10-loom.mappings.1_21_10.layered+hash.40359-v2-neoforge-21.10.47-beta.jar" [locator: game locator]
+[14:40:12] [ForkJoinPool.commonPool-worker-2/INFO] (InDevFolderLocator) Got mod coordinates main%%D:\FNAF-Jumpscare\neoforge\build\resources\main;main%%D:\FNAF-Jumpscare\neoforge\build\classes\java\main;main%%D:\FNAF-Jumpscare\neoforge\out\production\classes;main%%D:\FNAF-Jumpscare\neoforge\out\production\resources from env
+[14:40:12] [ForkJoinPool.commonPool-worker-2/INFO] (ModDiscoverer) Found mod file "main" [locator: indevfolder, reader: mod manifest]
+[14:40:12] [ForkJoinPool.commonPool-worker-2/INFO] (ModDiscoverer) Found mod file "13363767582657775525.jar" [locator: indevjar, reader: mod manifest]
+[14:40:12] [ForkJoinPool.commonPool-worker-2/INFO] (ModDiscoverer) Found gamelibrary file "mixinextras-neoforge-0.5.0.jar" [locator: indevjar, reader: mod manifest]
+[14:40:13] [fml-loadingscreen/INFO] (LoadingScreenRenderer) GL info: AMD Radeon(TM) Graphics GL version 3.3.0 Core Profile Context 23.19.21.13.250623, ATI Technologies Inc.
+[14:40:13] [ForkJoinPool.commonPool-worker-2/WARN] (JarSelector) Attempted to select a dependency jar for JarJar which was passed in as source: library:mixinextras.neoforge. Using jar(C:\Users\leevo\.gradle\caches\modules-2\files-2.1\io.github.llamalad7\mixinextras-neoforge\0.5.0\d734b83ce6542bb70ea31755c1595b88992dbe65\mixinextras-neoforge-0.5.0.jar)
+[14:40:13] [ForkJoinPool.commonPool-worker-2/INFO] (JarInJarDependencyLocator) Found 1 dependencies adding them to mods collection
+[14:40:13] [ForkJoinPool.commonPool-worker-2/INFO] (ModDiscoverer) Found library file "net.neoforged.neoforge-coremods-21.10.47-beta.jar" [parent: neoforge-21.10.47-beta-minecraft-merged-1.21.10-loom.mappings.1_21_10.layered+hash.40359-v2-neoforge-21.10.47-beta.jar, locator: jarinjar, reader: mod manifest]
+[14:40:13] [ForkJoinPool.commonPool-worker-2/INFO] (ModDiscoverer) 
+     Mod List:
+		Name Version (Mod Id)
+
+		FNAF-Jumpscare 1.2.2 (fnafmod)
+		generated_5400d03 1 (generated_5400d03)
+		Minecraft 1.21.10 (minecraft)
+		NeoForge 21.10.47-beta (neoforge)
+[14:40:13] [main/INFO] (mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/C:/Users/leevo/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.16.5+mixin.0.8.7/80fc3a9f592673cea87f4cd702f87991c6c9fe4d/sponge-mixin-0.16.5+mixin.0.8.7.jar Service=FML Env=CLIENT
+[14:40:13] [main/INFO] (FMLLoader) Loading FML Plugins:
+[14:40:13] [main/INFO] (FMLLoader)  - .cache/jij/51629231fe2baaddd60d570ef06ada2b2f1fe8a34133e63afdd748b9ef93f9f1/net.neoforged.neoforge-coremods-21.10.47-beta.jar
+[14:40:13] [main/INFO] (unprotect) Initializing Unprotect using FancyModLoader backend, target: Minecraft and loader classes (minecraft+forge)
+[14:40:13] [main/INFO] (FMLLoader) Building game content classloader:
+ - fnafmod (composite(folder(D:\FNAF-Jumpscare\neoforge\build\resources\main), folder(D:\FNAF-Jumpscare\neoforge\build\classes\java\main)))
+ - generated_5400d03 (jar(C:\Users\leevo\AppData\Local\Temp\13363767582657775525.jar))
+ - minecraft (composite(jar(C:\Users\leevo\.gradle\caches\fabric-loom\1.21.10\neoforge\21.10.47-beta\client-extra.jar), filtered(jar(C:\Users\leevo\.gradle\caches\fabric-loom\minecraftMaven\net\minecraft\neoforge-21.10.47-beta-minecraft-merged\1.21.10-loom.mappings.1_21_10.layered+hash.40359-v2-neoforge-21.10.47-beta\neoforge-21.10.47-beta-minecraft-merged-1.21.10-loom.mappings.1_21_10.layered+hash.40359-v2-neoforge-21.10.47-beta.jar))))
+ - mixinextras.neoforge (jar(C:\Users\leevo\.gradle\caches\modules-2\files-2.1\io.github.llamalad7\mixinextras-neoforge\0.5.0\d734b83ce6542bb70ea31755c1595b88992dbe65\mixinextras-neoforge-0.5.0.jar))
+ - neoforge (composite(filtered(jar(C:\Users\leevo\.gradle\caches\fabric-loom\minecraftMaven\net\minecraft\neoforge-21.10.47-beta-minecraft-merged\1.21.10-loom.mappings.1_21_10.layered+hash.40359-v2-neoforge-21.10.47-beta\neoforge-21.10.47-beta-minecraft-merged-1.21.10-loom.mappings.1_21_10.layered+hash.40359-v2-neoforge-21.10.47-beta.jar))))
+ - net.neoforged.fml.generated (empty(VirtualJar\net.neoforged.fml.generated))
+[14:40:13] [main/INFO] (FMLLoader) Built game content classloader in 25ms
+[14:40:13] [main/WARN] (MixinFacade) Mod file composite(folder(D:\FNAF-Jumpscare\neoforge\build\resources\main), folder(D:\FNAF-Jumpscare\neoforge\build\classes\java\main)) declares mixin config fnafmod.mixins.json, but it actually comes from jar(C:\Users\leevo\AppData\Local\Temp\13363767582657775525.jar)
+[14:40:13] [main/INFO] (unprotect) Found 9922 Minecraft classes
+[14:40:15] [main/WARN] (PerfmonDisabled) Invalid registry value type detected for PerfOS counters. Should be REG_DWORD. Ignoring: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfOS\Performance\Disable Performance Counters.
+[14:40:15] [pool-12-thread-1/INFO] (MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.0).
+[14:40:15] [Datafixer Bootstrap/INFO] (Minecraft) 281 Datafixer optimizations took 590 milliseconds
+[14:40:20] [main/WARN] (Minecraft) Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[14:40:20] [main/WARN] (Minecraft) Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[14:40:20] [main/WARN] (Minecraft) Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[14:40:20] [main/WARN] (Minecraft) Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[14:40:20] [main/WARN] (Minecraft) Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[14:40:20] [main/WARN] (Minecraft) Ambiguity between arguments [waypoint, modify, waypoint, color, reset] and [waypoint, modify, waypoint, color, color] with inputs: [reset]
+[14:40:20] [modloading-worker-0/INFO] (NeoForgeMod) NeoForge mod loading, version 21.10.47-beta, for MC 1.21.10
+[14:40:21] [Render thread/INFO] (Minecraft) Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[14:40:21] [Render thread/INFO] (Minecraft) Setting user: Dev
+[14:40:21] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.3+5
+[14:40:21] [Render thread/WARN] (Minecraft) Detected unexpected shutdown during last game startup: resetting fullscreen mode
+[14:40:21] [Render thread/INFO] (Minecraft) Using optional rendering extensions: GL_ARB_buffer_storage, GL_KHR_debug, GL_ARB_vertex_attrib_binding, GL_ARB_direct_state_access
+[14:40:22] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, mod_resources, mod/fnafmod, mod/generated_5400d03, mod/neoforge
+[14:40:22] [resourceLoad/INFO] (Minecraft) Found unifont_pua-16.0.03.hex, loading
+[14:40:22] [resourceLoad/INFO] (Minecraft) Found unifont_all_no_pua-16.0.03.hex, loading
+[14:40:23] [resourceLoad/INFO] (Minecraft) Found unifont_jp_patch-16.0.03.hex, loading
+[14:40:24] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on Speakers (SteelSeries Arctis 9X Headset)
+[14:40:24] [Render thread/INFO] (Minecraft) Sound engine started
+[14:40:24] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[14:40:24] [Render thread/INFO] (Minecraft) Created: 128x64x0 minecraft:textures/atlas/decorated_pot.png-atlas
+[14:40:24] [Render thread/INFO] (Minecraft) Created: 2048x1024x0 minecraft:textures/atlas/armor_trims.png-atlas
+[14:40:24] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+[14:40:24] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/shield_patterns.png-atlas
+[14:40:24] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[14:40:24] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/chest.png-atlas
+[14:40:24] [Render thread/INFO] (Minecraft) Created: 512x512x0 minecraft:textures/atlas/banner_patterns.png-atlas
+[14:40:24] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/beds.png-atlas
+[14:40:24] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
+[14:40:24] [Render thread/INFO] (Minecraft) Created: 64x64x0 minecraft:textures/atlas/map_decorations.png-atlas
+[14:40:24] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/signs.png-atlas
+[14:40:24] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/shulker_boxes.png-atlas
+[14:40:24] [Render thread/INFO] (AnimationLoader) Loaded 0 entity animations
+[14:40:24] [Render thread/ERROR] (ClassTransformStatistics) Class processor unprotect:processor transformed 84.94% of loaded class which is suspiciously high; it may be attempting mass-ASM. Please report this to the mod author.
+[14:42:00] [Render thread/ERROR] (ClassTransformStatistics) Class processor unprotect:processor transformed 84.98% of loaded class which is suspiciously high; it may be attempting mass-ASM. Please report this to the mod author.
+[14:42:00] [Render thread/INFO] (Minecraft) Stopping!

@@ -1,0 +1,129 @@
+---- Minecraft Crash Report ----
+// Hi. I'm Minecraft, and I'm a crashaholic.
+
+Time: 2025-11-04 22:29:40
+Description: Unexpected error
+
+java.lang.ExceptionInInitializerError: null
+	at TRANSFORMER/fnafmod@1.2.0/lee.fnafmod.neoforge.client.NeoForgeClientEventHandler.onClientTickEnd(NeoForgeClientEventHandler.java:60) ~[main/:?] {}
+	at net.neoforged.bus.ConsumerEventHandler.invoke(ConsumerEventHandler.java:27) ~[bus-8.0.5.jar:?] {}
+	at net.neoforged.bus.EventBus.post(EventBus.java:360) ~[bus-8.0.5.jar:?] {}
+	at net.neoforged.bus.EventBus.post(EventBus.java:328) ~[bus-8.0.5.jar:?] {}
+	at TRANSFORMER/neoforge@21.9.0-beta/net.neoforged.neoforge.client.ClientHooks.fireClientTickPost(ClientHooks.java:1050) ~[neoforge-21.9.0-beta-minecraft-merged-1.21.9-loom.mappings.1_21_9.layered+hash.40359-v2-neoforge-21.9.0-beta.jar:?] {}
+	at TRANSFORMER/minecraft@1.21.9/net.minecraft.client.Minecraft.tick(Minecraft.java:1914) [client-extra.jar:?] {re:classloading,pl:unprotect:A}
+	at TRANSFORMER/minecraft@1.21.9/net.minecraft.client.Minecraft.runTick(Minecraft.java:1297) [client-extra.jar:?] {re:classloading,pl:unprotect:A}
+	at TRANSFORMER/minecraft@1.21.9/net.minecraft.client.Minecraft.run(Minecraft.java:928) [client-extra.jar:?] {re:classloading,pl:unprotect:A}
+	at TRANSFORMER/minecraft@1.21.9/net.minecraft.client.main.Main.main(Main.java:227) [client-extra.jar:?] {re:classloading,pl:unprotect:A}
+	at net.neoforged.fml.startup.Client.main(Client.java:26) [loader-10.0.10.jar:10.0] {}
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) [dev-launch-injector-0.2.1+build.8.jar:?] {}
+	at dev.architectury.transformer.TransformerRuntime.main(TransformerRuntime.java:220) [architectury-transformer-5.2.87-runtime.jar:5.2.87] {}
+Caused by: java.lang.IllegalStateException: Missing location
+	at TRANSFORMER/minecraft@1.21.9/com.mojang.blaze3d.pipeline.RenderPipeline$Builder.build(RenderPipeline.java:556) ~[neoforge-21.9.0-beta-minecraft-merged-1.21.9-loom.mappings.1_21_9.layered+hash.40359-v2-neoforge-21.9.0-beta.jar:?] {}
+	at TRANSFORMER/generated_a1760a9@1/lee.fnafmod.client.JumpscareManager.<clinit>(JumpscareManager.java:48) ~[fnafmod-common-1.2.0-dev.jar:?] {}
+	... 12 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at TRANSFORMER/fnafmod@1.2.0/lee.fnafmod.neoforge.client.NeoForgeClientEventHandler.onClientTickEnd(NeoForgeClientEventHandler.java:60) ~[main/:?] {}
+	at net.neoforged.bus.ConsumerEventHandler.invoke(ConsumerEventHandler.java:27) ~[bus-8.0.5.jar:?] {}
+	at net.neoforged.bus.EventBus.post(EventBus.java:360) ~[bus-8.0.5.jar:?] {}
+	at net.neoforged.bus.EventBus.post(EventBus.java:328) ~[bus-8.0.5.jar:?] {}
+	at TRANSFORMER/neoforge@21.9.0-beta/net.neoforged.neoforge.client.ClientHooks.fireClientTickPost(ClientHooks.java:1050) ~[neoforge-21.9.0-beta-minecraft-merged-1.21.9-loom.mappings.1_21_9.layered+hash.40359-v2-neoforge-21.9.0-beta.jar:?] {}
+-- Uptime --
+Details:
+	JVM uptime: 24.538s
+	Wall uptime: 3.996s
+	High-res time: 15.388s
+	Client ticks: 35 ticks / 1.750s
+Stacktrace:
+	at TRANSFORMER/minecraft@1.21.9/net.minecraft.client.Minecraft.fillReport(Minecraft.java:2369) [client-extra.jar:?] {re:classloading,pl:unprotect:A}
+	at TRANSFORMER/minecraft@1.21.9/net.minecraft.client.Minecraft.emergencySaveAndCrash(Minecraft.java:992) [client-extra.jar:?] {re:classloading,pl:unprotect:A}
+	at TRANSFORMER/minecraft@1.21.9/net.minecraft.client.Minecraft.run(Minecraft.java:951) [client-extra.jar:?] {re:classloading,pl:unprotect:A}
+	at TRANSFORMER/minecraft@1.21.9/net.minecraft.client.main.Main.main(Main.java:227) [client-extra.jar:?] {re:classloading,pl:unprotect:A}
+	at net.neoforged.fml.startup.Client.main(Client.java:26) [loader-10.0.10.jar:10.0] {}
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) [dev-launch-injector-0.2.1+build.8.jar:?] {}
+	at dev.architectury.transformer.TransformerRuntime.main(TransformerRuntime.java:220) [architectury-transformer-5.2.87-runtime.jar:5.2.87] {}
+
+
+-- Last reload --
+Details:
+	Reload number: 1
+	Reload reason: initial
+	Finished: Yes
+	Packs: vanilla, mod_resources, mod/fnafmod, mod/generated_a1760a9, mod/neoforge
+
+-- System Details --
+Details:
+	Minecraft Version: 1.21.9
+	Minecraft Version ID: 1.21.9
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 21.0.9, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium
+	Memory: 313281264 bytes (298 MiB) / 2013265920 bytes (1920 MiB) up to 3720347648 bytes (3548 MiB)
+	CPUs: 12
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 5 5600H with Radeon Graphics         
+	Identifier: AuthenticAMD Family 25 Model 80 Stepping 0
+	Microarchitecture: Zen 3
+	Frequency (GHz): 3.29
+	Number of physical packages: 1
+	Number of physical CPUs: 6
+	Number of logical CPUs: 12
+	Graphics card #0 name: AMD Radeon(TM) Graphics
+	Graphics card #0 vendor: Advanced Micro Devices, Inc.
+	Graphics card #0 VRAM (MiB): 2048.00
+	Graphics card #0 deviceId: VideoController1
+	Graphics card #0 versionInfo: 31.0.21921.13001
+	Graphics card #1 name: NVIDIA GeForce RTX 3050 Ti Laptop GPU
+	Graphics card #1 vendor: NVIDIA
+	Graphics card #1 VRAM (MiB): 4096.00
+	Graphics card #1 deviceId: VideoController2
+	Graphics card #1 versionInfo: 32.0.15.8180
+	Memory slot #0 capacity (MiB): 8192.00
+	Memory slot #0 clockSpeed (GHz): 3.20
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MiB): 8192.00
+	Memory slot #1 clockSpeed (GHz): 3.20
+	Memory slot #1 type: DDR4
+	Virtual memory max (MiB): 22364.50
+	Virtual memory used (MiB): 21021.37
+	Swap memory total (MiB): 8176.44
+	Swap memory used (MiB): 1704.61
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 11883.17, total: 243285.00
+	Space in storage for workdir (MiB): available: 283309.09, total: 476938.69
+	JVM Flags: 0 total; 
+	Debug Flags: 0 total; 
+	Launched Version: 21.9.0-beta
+	Backend library: LWJGL version 3.3.3+5
+	Backend API: AMD Radeon(TM) Graphics GL version 3.2.0 Core Profile Context 23.19.21.13.250623, ATI Technologies Inc.
+	Window size: 854x480
+	GFLW Platform: win32
+	Render Extensions: GL_ARB_buffer_storage, GL_KHR_debug, GL_ARB_vertex_attrib_binding, GL_ARB_direct_state_access
+	GL debug messages: 
+	Is Modded: Definitely; Client brand changed to 'neoforge'
+	Universe: 400921fb54442d18
+	Type: Client (map_client.txt)
+	Graphics mode: fancy
+	Render Distance: 12/12 chunks
+	Resource Packs: vanilla, mod_resources, mod/fnafmod, mod/generated_a1760a9 (incompatible), mod/neoforge (incompatible)
+	Current Language: en_us
+	Locale: en_US
+	System encoding: Cp1252
+	File encoding: UTF-8
+	CPU: 12x AMD Ryzen 5 5600H with Radeon Graphics 
+	Mod List: 
+		main                                              |FNAF-Jumpscare                |fnafmod                       |1.2.0               |Manifest: NOSIGNATURE
+		16148203214416793424.jar                          |generated_a1760a9             |generated_a1760a9             |1                   |Manifest: b9d13545c27b016a65bb49c76572445df0373a86a786dcad8ffd208867f5bf28
+		client-extra.jar                                  |Minecraft                     |minecraft                     |1.21.9              |Manifest: NOSIGNATURE
+		neoforge-21.9.0-beta-minecraft-merged-1.21.9-loom.|NeoForge                      |neoforge                      |21.9.0-beta         |Manifest: NOSIGNATURE
+	Crash Report UUID: de8e6ce1-d189-49a1-b4d6-b37c3273d47d
+	FML: 10.0.10
+	NeoForge: 21.9.0-beta

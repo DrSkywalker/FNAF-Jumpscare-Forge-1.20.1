@@ -1,0 +1,69 @@
+---- Minecraft Crash Report ----
+// You should try our sister game, Minceraft!
+
+Time: 2025-11-04 16:12:46
+Description: Mod loading failures have occurred; consult the issue messages for more details
+
+net.neoforged.neoforge.logging.CrashReportExtender$ModLoadingCrashException: Mod loading has failed
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Mod loading issue for: fnafmod --
+Details:
+	Mod file: /D:/FNAF-Jumpscare/neoforge/build/resources/main/
+	Failure message: Mod fnafmod requires neoforge 21.9 or above
+		Currently, neoforge is 21.9.0-beta
+		
+	Mod version: 1.2.0
+	Mod issues URL: <No issues URL found>
+	Exception message: <No associated exception found>
+
+-- System Details --
+Details:
+	Minecraft Version: 1.21.9
+	Minecraft Version ID: 1.21.9
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 21.0.9, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium
+	Memory: 176371320 bytes (168 MiB) / 1918894080 bytes (1830 MiB) up to 3720347648 bytes (3548 MiB)
+	CPUs: 12
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 5 5600H with Radeon Graphics         
+	Identifier: AuthenticAMD Family 25 Model 80 Stepping 0
+	Microarchitecture: Zen 3
+	Frequency (GHz): 3.29
+	Number of physical packages: 1
+	Number of physical CPUs: 6
+	Number of logical CPUs: 12
+	Graphics card #0 name: AMD Radeon(TM) Graphics
+	Graphics card #0 vendor: Advanced Micro Devices, Inc.
+	Graphics card #0 VRAM (MiB): 2048.00
+	Graphics card #0 deviceId: VideoController1
+	Graphics card #0 versionInfo: 31.0.21921.13001
+	Graphics card #1 name: NVIDIA GeForce RTX 3050 Ti Laptop GPU
+	Graphics card #1 vendor: NVIDIA
+	Graphics card #1 VRAM (MiB): 4096.00
+	Graphics card #1 deviceId: VideoController2
+	Graphics card #1 versionInfo: 32.0.15.8180
+	Memory slot #0 capacity (MiB): 8192.00
+	Memory slot #0 clockSpeed (GHz): 3.20
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MiB): 8192.00
+	Memory slot #1 clockSpeed (GHz): 3.20
+	Memory slot #1 type: DDR4
+	Virtual memory max (MiB): 19564.06
+	Virtual memory used (MiB): 18286.56
+	Swap memory total (MiB): 5376.00
+	Swap memory used (MiB): 992.74
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 2846.60, total: 243285.00
+	Space in storage for workdir (MiB): available: 283040.50, total: 476938.69
+	JVM Flags: 0 total; 
+	Debug Flags: 0 total; 
+	Mod List: 
+		client-extra.jar                                  |Minecraft                     |minecraft                     |1.21.9              |Manifest: NOSIGNATURE
+		neoforge-21.9.0-beta-minecraft-merged-1.21.9-loom.|NeoForge                      |neoforge                      |21.9.0-beta         |Manifest: NOSIGNATURE

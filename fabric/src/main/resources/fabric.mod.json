@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "fnafmod",
+  "version": "${version}",
+  "name": "FNAF-Jumpscare",
+  "description": "FNAF jumpscares on any screen, including the main menu.",
+  "authors": [
+    "CodingSkywalker"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/fnaf-random-jumpscares",
+    "sources": "https://github.com/DrSkywalker/FNAF-Jumpscares/"
+  },
+  "license": "MIT",
+  "icon": "logo.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "lee.fnafmod.fabric.fnafmodfabric"
+    ],
+    "client": [
+      "lee.fnafmod.fabric.client.fnafmodfabricclient"
+    ]
+  },
+  "mixins": [
+    "fnafmod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.17.3",
+    "minecraft": "~1.21.10",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
