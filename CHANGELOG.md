@@ -6,7 +6,7 @@ This project follows [Semantic Versioning](https://semver.org/).
 ---
 ## 1.3.6 – 2025-11-06
 
-> _Pizza Sim Update_
+> _Updated Values_
 
 ## 1.1 – 2025-11-02
 
