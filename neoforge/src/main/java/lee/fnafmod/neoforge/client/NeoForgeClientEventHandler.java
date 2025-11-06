@@ -41,9 +41,6 @@ public class NeoForgeClientEventHandler implements ClientEventHandler {
         if (Keybinds.TEST_SCARE != null) {
             e.register(Keybinds.TEST_SCARE);
         }
-        if (Keybinds.TEST_FIRST_SCARE != null) {
-            e.register(Keybinds.TEST_FIRST_SCARE);
-        }
     }
 
     private void onRegisterGuiOverlays(RegisterGuiLayersEvent e) {
@@ -53,9 +50,6 @@ public class NeoForgeClientEventHandler implements ClientEventHandler {
     private void onClientTickEnd(ClientTickEvent.Post e) {
         if (Keybinds.TEST_SCARE != null && Keybinds.TEST_SCARE.consumeClick()) {
             JumpscareManager.get().triggerRandom();
-        }
-        if (Keybinds.TEST_FIRST_SCARE != null && Keybinds.TEST_FIRST_SCARE.consumeClick()) {
-            JumpscareManager.get().triggerFirst();
         }
         JumpscareManager.get().tick();
     }
@@ -68,9 +62,6 @@ public class NeoForgeClientEventHandler implements ClientEventHandler {
 
             if (Keybinds.TEST_SCARE != null && Keybinds.TEST_SCARE.matches(e.getKeyEvent())) {
                 JumpscareManager.get().triggerRandom();
-            }
-            if (Keybinds.TEST_FIRST_SCARE != null && Keybinds.TEST_FIRST_SCARE.matches(e.getKeyEvent())) {
-                JumpscareManager.get().triggerFirst();
             }
         }
     }

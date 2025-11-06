@@ -136,7 +136,6 @@ key_key.hotbar.7:key.keyboard.7
 key_key.hotbar.8:key.keyboard.8
 key_key.hotbar.9:key.keyboard.9
 key_key.fnafmod.test_scare:key.keyboard.f6
-key_key.fnafmod.test_first_scare:key.keyboard.f7
 soundCategory_master:1.0
 soundCategory_music:0.0
 soundCategory_record:1.0

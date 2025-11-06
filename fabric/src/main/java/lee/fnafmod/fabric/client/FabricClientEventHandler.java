@@ -15,9 +15,6 @@ public class FabricClientEventHandler implements ClientEventHandler {
             if (Keybinds.TEST_SCARE != null && Keybinds.TEST_SCARE.consumeClick()) {
                 JumpscareManager.get().triggerRandom();
             }
-            if (Keybinds.TEST_FIRST_SCARE != null && Keybinds.TEST_FIRST_SCARE.consumeClick()) {
-                JumpscareManager.get().triggerFirst();
-            }
             JumpscareManager.get().tick();
         });
     }
@@ -26,9 +23,6 @@ public class FabricClientEventHandler implements ClientEventHandler {
     public void registerKeyBindings() {
         if (Keybinds.TEST_SCARE != null) {
             KeyBindingHelper.registerKeyBinding(Keybinds.TEST_SCARE);
-        }
-        if (Keybinds.TEST_FIRST_SCARE != null) {
-            KeyBindingHelper.registerKeyBinding(Keybinds.TEST_FIRST_SCARE);
         }
     }
 

@@ -15,25 +15,17 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(Screen.class)
 public class ScreenMixin {
 
-    /**
-     * Inject into the render method to render jumpscares on top of screens
-     */
+
     @Inject(method = "render", at = @At("HEAD"))
     private void onRender(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick, CallbackInfo ci) {
         JumpscareManager.get().render(guiGraphics);
     }
 
-    /**
-     * Inject into the keyPressed method to handle debug keybinds (F6/F7) in screens
-     */
     @Inject(method = "keyPressed", at = @At("HEAD"))
     private void onKeyPressed(KeyEvent keyEvent, CallbackInfoReturnable<Boolean> cir) {
         if (!JumpscareManager.get().isActive()) {
             if (Keybinds.TEST_SCARE != null && keyEvent.input() == GLFW.GLFW_KEY_F6) {
                 JumpscareManager.get().triggerRandom();
-            }
-            if (Keybinds.TEST_FIRST_SCARE != null && keyEvent.input() == GLFW.GLFW_KEY_F7) {
-                JumpscareManager.get().triggerFirst();
             }
         }
     }

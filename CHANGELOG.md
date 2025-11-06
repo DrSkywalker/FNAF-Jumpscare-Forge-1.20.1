@@ -12,14 +12,21 @@ This project follows [Semantic Versioning](https://semver.org/).
 
 - Updated Propability for Jumpscares.
 
+## 1.3.4 – 2025-11-05
+
+> _Fixed Jumpscare Timer_
+
+### ⚙️ Technical
+
+- Updated Propability for Jumpscares.
+
 ## 1.3.3 – 2025-11-05
 
 > _I Am Dumb And I Didn't Change The Version Number Of MC._
 
-
 ## 1.3.2 – 2025-11-05
 
->  _Crash Fix Update_
+> _Crash Fix Update_
 
 ### ⚙️ Technical
 
@@ -31,14 +38,14 @@ This project follows [Semantic Versioning](https://semver.org/).
 
 ## 1.3.0 – 2025-11-05
 
->  _Crash Fix Update_
+> _Crash Fix Update_
 
 ### ⚙️ Technical
 
 - Changed Timing and Chances For Jumpscares
 - Downgraded to 1.21.9 for Fabric and NeoForge.
-  - Due to Architectury API not being load on 1.21.10.
-    - will be fixed on next Architectury update.
+    - Due to Architectury API not being load on 1.21.10.
+        - will be fixed on next Architectury update.
 
 ## 1.2.1 – 2025-11-05
 
@@ -51,7 +58,6 @@ This project follows [Semantic Versioning](https://semver.org/).
 > _Workflow API Update_
 
 ### ✨ Now Available On Fabric and NeoForge
-
 
 ## 1.2 – 2025-11-05
 
