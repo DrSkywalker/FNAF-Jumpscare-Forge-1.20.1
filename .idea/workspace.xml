@@ -8,169 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___fabric__fabric.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___fabric__fabric.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___neoforge__neoforge.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___neoforge__neoforge.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/lee/fnafmod/client/JumpscareManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/lee/fnafmod/client/JumpscareManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/lee/fnafmod/client/Keybinds.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/lee/fnafmod/client/Keybinds.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabric/run/saves/New World (1)/stats/92939c63-a7e1-358c-986e-33e314619bde.json" beforeDir="false" afterPath="$PROJECT_DIR$/fabric/run/saves/New World (1)/stats/92939c63-a7e1-358c-986e-33e314619bde.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabric/run/saves/New World/stats/7e352200-5a1b-37ca-9d08-8fe764041962.json" beforeDir="false" afterPath="$PROJECT_DIR$/fabric/run/saves/New World/stats/7e352200-5a1b-37ca-9d08-8fe764041962.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabric/run/saves/New World/stats/80366950-5482-38de-842a-c4cdd5802ec2.json" beforeDir="false" afterPath="$PROJECT_DIR$/fabric/run/saves/New World/stats/80366950-5482-38de-842a-c4cdd5802ec2.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabric/run/saves/New World/stats/88b1442b-3f7c-34cb-9b8b-19f2bae6b8af.json" beforeDir="false" afterPath="$PROJECT_DIR$/fabric/run/saves/New World/stats/88b1442b-3f7c-34cb-9b8b-19f2bae6b8af.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabric/run/usercache.json" beforeDir="false" afterPath="$PROJECT_DIR$/fabric/run/usercache.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabric/src/main/java/lee/fnafmod/fabric/client/FabricClientEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/fabric/src/main/java/lee/fnafmod/fabric/client/FabricClientEventHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabric/src/main/java/lee/fnafmod/fabric/mixin/ScreenMixin.java" beforeDir="false" afterPath="$PROJECT_DIR$/fabric/src/main/java/lee/fnafmod/fabric/mixin/ScreenMixin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/.architectury-transformer/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/.architectury-transformer/debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-1.log.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-2.log.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-3.log.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-4.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-4.log.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-5.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-5.log.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-6.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-6.log.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-7.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-7.log.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/debug-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/debug-1.log.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/debug-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/debug-2.log.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/debug-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/debug-3.log.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/debug-4.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/debug-4.log.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/debug-5.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/debug-5.log.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/latest.log" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/latest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/options.txt" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/options.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/DIM-1/data/chunks.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/DIM-1/data/neoforge_data_attachments.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/DIM-1/data/raids.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/DIM-1/data/world_border.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/DIM1/data/chunks.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/DIM1/data/neoforge_data_attachments.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/DIM1/data/raids_end.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/DIM1/data/world_border.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/advancements/380df991-f603-344c-a090-369bad2a924a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/data/chunks.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/data/neoforge_data_attachments.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/data/raids.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/data/random_sequences.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/data/scoreboard.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/data/world_border.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/entities/r.-1.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/entities/r.-1.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/entities/r.0.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/entities/r.0.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/level.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/level.dat_old" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/playerdata/380df991-f603-344c-a090-369bad2a924a.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/playerdata/380df991-f603-344c-a090-369bad2a924a.dat_old" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/poi/r.-1.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/poi/r.-1.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/poi/r.0.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/poi/r.0.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/region/r.-1.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/region/r.-1.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/region/r.0.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/region/r.0.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/serverconfig/readme.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/session.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (1)/stats/380df991-f603-344c-a090-369bad2a924a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/DIM-1/data/chunks.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/DIM-1/data/neoforge_data_attachments.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/DIM-1/data/raids.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/DIM-1/data/world_border.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/DIM1/data/chunks.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/DIM1/data/neoforge_data_attachments.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/DIM1/data/raids_end.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/DIM1/data/world_border.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/advancements/380df991-f603-344c-a090-369bad2a924a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/data/chunks.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/data/neoforge_data_attachments.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/data/raids.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/data/random_sequences.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/data/scoreboard.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/data/world_border.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/entities/r.-1.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/entities/r.-1.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/entities/r.0.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/entities/r.0.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/entities/r.1.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/entities/r.1.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/level.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/level.dat_old" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/playerdata/380df991-f603-344c-a090-369bad2a924a.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/playerdata/380df991-f603-344c-a090-369bad2a924a.dat_old" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/poi/r.-1.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/poi/r.-1.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/poi/r.0.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/poi/r.0.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/poi/r.1.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/poi/r.1.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/region/r.-1.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/region/r.-1.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/region/r.0.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/region/r.0.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/region/r.1.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/region/r.1.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/serverconfig/readme.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/session.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (2)/stats/380df991-f603-344c-a090-369bad2a924a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/DIM-1/data/chunks.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/DIM-1/data/neoforge_data_attachments.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/DIM-1/data/raids.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/DIM-1/data/world_border.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/DIM1/data/chunks.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/DIM1/data/neoforge_data_attachments.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/DIM1/data/raids_end.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/DIM1/data/world_border.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/advancements/380df991-f603-344c-a090-369bad2a924a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/data/chunks.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/data/neoforge_data_attachments.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/data/raids.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/data/random_sequences.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/data/scoreboard.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/data/world_border.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/entities/r.-1.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/entities/r.-1.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/entities/r.0.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/entities/r.0.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/level.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/level.dat_old" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/playerdata/380df991-f603-344c-a090-369bad2a924a.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/playerdata/380df991-f603-344c-a090-369bad2a924a.dat_old" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/poi/r.-1.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/poi/r.-1.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/poi/r.0.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/poi/r.0.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/region/r.-1.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/region/r.-1.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/region/r.0.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/region/r.0.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/serverconfig/readme.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/session.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World (3)/stats/380df991-f603-344c-a090-369bad2a924a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World/DIM-1/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/saves/New World/DIM-1/data/raids.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World/DIM1/data/raids_end.dat" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/saves/New World/DIM1/data/raids_end.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World/advancements/380df991-f603-344c-a090-369bad2a924a.json" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/saves/New World/advancements/380df991-f603-344c-a090-369bad2a924a.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/saves/New World/data/raids.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World/data/random_sequences.dat" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/saves/New World/data/random_sequences.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World/entities/r.-1.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/saves/New World/entities/r.-1.-1.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World/entities/r.-1.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/saves/New World/entities/r.-1.0.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World/entities/r.0.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/saves/New World/entities/r.0.-1.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World/entities/r.0.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/saves/New World/entities/r.0.0.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/saves/New World/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World/level.dat" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/saves/New World/level.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World/level.dat_old" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/saves/New World/level.dat_old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World/playerdata/380df991-f603-344c-a090-369bad2a924a.dat" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/saves/New World/playerdata/380df991-f603-344c-a090-369bad2a924a.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World/playerdata/380df991-f603-344c-a090-369bad2a924a.dat_old" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/saves/New World/playerdata/380df991-f603-344c-a090-369bad2a924a.dat_old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World/poi/r.-1.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/saves/New World/poi/r.-1.-1.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World/poi/r.-1.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/saves/New World/poi/r.-1.0.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World/poi/r.0.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/saves/New World/poi/r.0.-1.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World/poi/r.0.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/saves/New World/poi/r.0.0.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World/region/r.-1.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/saves/New World/region/r.-1.-1.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World/region/r.-1.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/saves/New World/region/r.-1.0.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World/region/r.0.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/saves/New World/region/r.0.-1.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World/region/r.0.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/saves/New World/region/r.0.0.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/saves/New World/stats/380df991-f603-344c-a090-369bad2a924a.json" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/saves/New World/stats/380df991-f603-344c-a090-369bad2a924a.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/run/usercache.json" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/usercache.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neoforge/src/main/java/lee/fnafmod/neoforge/client/NeoForgeClientEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/src/main/java/lee/fnafmod/neoforge/client/NeoForgeClientEventHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -309,7 +146,7 @@
       <recent name="D:\FNAF-Jumpscare\fabric\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.FNAF-Jumpscare:neoforge [runClient]">
+  <component name="RunManager" selected="Gradle.FNAF-Jumpscare [build]">
     <configuration name="FNAF-Jumpscare [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -431,9 +268,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.FNAF-Jumpscare:neoforge [runClient]" />
         <item itemvalue="Gradle.FNAF-Jumpscare [build]" />
         <item itemvalue="Gradle.FNAF-Jumpscare [clean]" />
+        <item itemvalue="Gradle.FNAF-Jumpscare:neoforge [runClient]" />
         <item itemvalue="Gradle.FNAF-Jumpscare:fabric [runClient]" />
         <item itemvalue="Gradle.FNAF-Jumpscare [downloadAssets]" />
       </list>
@@ -470,7 +307,8 @@
       <workItem from="1762379483850" duration="743000" />
       <workItem from="1762396385152" duration="2762000" />
       <workItem from="1762400182068" duration="2126000" />
-      <workItem from="1762403075856" duration="1952000" />
+      <workItem from="1762403075856" duration="2056000" />
+      <workItem from="1762405390934" duration="141000" />
     </task>
     <task id="LOCAL-00001" summary="Fixes">
       <option name="closed" value="true" />
@@ -640,7 +478,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762400674038</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Changes some Jumpscare values">
+      <option name="closed" value="true" />
+      <created>1762405313496</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1762405313496</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

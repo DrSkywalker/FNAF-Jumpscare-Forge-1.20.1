@@ -4,6 +4,10 @@ All notable changes to this project will be documented here.
 This project follows [Semantic Versioning](https://semver.org/).
 
 ---
+## 1.3.6 – 2025-11-06
+
+> _Fixing Values_
+
 ## 1.3.4 – 2025-11-05
 
 > _Fixed Jumpscare Timer_
