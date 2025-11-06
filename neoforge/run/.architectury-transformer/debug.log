@@ -1,16 +1,16 @@
 [Architectury Transformer] Architectury Runtime 5.2.87
-[Architectury Transformer DEBUG] Closed File Systems for D:\FNAF-Jumpscare\common\build\devlibs\fnafmod-common-1.2.2-dev.jar
+[Architectury Transformer DEBUG] Closed File Systems for D:\FNAF-Jumpscare\common\build\devlibs\fnafmod-common-1.3.4-dev.jar
 [Architectury Transformer DEBUG] Preparing tiny remapper prepared transformer: dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Provided 97 classpath jar(s):
-[Architectury Transformer DEBUG]  - C:\Users\leevo\.gradle\caches\fabric-loom\1.21.10\neoforge\21.10.47-beta\client-extra.jar
+[Architectury Transformer DEBUG]  - C:\Users\leevo\.gradle\caches\fabric-loom\1.21.9\neoforge\21.9.16-beta\client-extra.jar
 [Architectury Transformer DEBUG]  - C:\Users\leevo\.gradle\caches\modules-2\files-2.1\dev.architectury\architectury-injectables\1.0.10\62db2a366d662606d1b23ad02ccc3212ed37ec3\architectury-injectables-1.0.10.jar
 [Architectury Transformer DEBUG]  - C:\Users\leevo\.gradle\caches\modules-2\files-2.1\net.fabricmc\fabric-loader\0.17.3\deafaba5de4d9bbd76105783ff4e21ce0773874f\fabric-loader-0.17.3.jar
 [Architectury Transformer DEBUG]  - C:\Users\leevo\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\26.0.2\c7ce3cdeda3d18909368dfe5977332dfad326c6d\annotations-26.0.2.jar
 [Architectury Transformer DEBUG]  - C:\Users\leevo\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.2\25ea2e8b0c338a877313bd4672d3fe056ea78f0d\jsr305-3.0.2.jar
-[Architectury Transformer DEBUG]  - C:\Users\leevo\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\earlydisplay\10.0.29\6268812ffd0c16cc1eea921b2335d58585384574\earlydisplay-10.0.29.jar
-[Architectury Transformer DEBUG]  - C:\Users\leevo\.gradle\caches\fabric-loom\forge\transformed-dependencies-v1\net\neoforged\fancymodloader\b23a86e2c1c143c84c6d7668772f419238bf39e00831d9f9ccb259f35b3ddb36\loader\10.0.29\loader-10.0.29.jar
+[Architectury Transformer DEBUG]  - C:\Users\leevo\.gradle\caches\modules-2\files-2.1\net.neoforged.fancymodloader\earlydisplay\10.0.14\1f33d6a4ddb222e2eb6a1e12b22512f3ac726884\earlydisplay-10.0.14.jar
+[Architectury Transformer DEBUG]  - C:\Users\leevo\.gradle\caches\fabric-loom\forge\transformed-dependencies-v1\net\neoforged\fancymodloader\ccf67dd7fc9517b2b5c9111f5d01273fe534a30e25c945c09519681f0e657464\loader\10.0.14\loader-10.0.14.jar
 [Architectury Transformer DEBUG]  - C:\Users\leevo\.gradle\caches\modules-2\files-2.1\net.neoforged\accesstransformers\11.0.2\25dcb69c78b16669935f0ab91dff830ce192379d\accesstransformers-11.0.2.jar
-[Architectury Transformer DEBUG]  - C:\Users\leevo\.gradle\caches\modules-2\files-2.1\net.fabricmc\sponge-mixin\0.16.5+mixin.0.8.7\80fc3a9f592673cea87f4cd702f87991c6c9fe4d\sponge-mixin-0.16.5+mixin.0.8.7.jar
+[Architectury Transformer DEBUG]  - C:\Users\leevo\.gradle\caches\modules-2\files-2.1\net.fabricmc\sponge-mixin\0.16.4+mixin.0.8.7\26d01f0567ab46e9ca0d2ed89d0ecc11aadbd433\sponge-mixin-0.16.4+mixin.0.8.7.jar
 [Architectury Transformer DEBUG]  - C:\Users\leevo\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-commons\9.8\36e4d212970388e5bd2c5180292012502df461bb\asm-commons-9.8.jar
 [Architectury Transformer DEBUG]  - C:\Users\leevo\.gradle\caches\modules-2\files-2.1\net.neoforged\mergetool\2.0.0\52fe1949be64e3303aabaaa21e315f551db9c9f4\mergetool-2.0.0-api.jar
 [Architectury Transformer DEBUG]  - C:\Users\leevo\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-util\9.8\395f1c1f035258511f27bc9b2583d76e4b143f59\asm-util-9.8.jar
@@ -96,21 +96,21 @@
 [Architectury Transformer DEBUG]  - C:\Users\leevo\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-jemalloc\3.3.3\b543467b7ff3c6920539a88ee602d34098628be5\lwjgl-jemalloc-3.3.3.jar
 [Architectury Transformer DEBUG]  - C:\Users\leevo\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-openal\3.3.3\daada81ceb5fc0c291fbfdd4433cb8d9423577f2\lwjgl-openal-3.3.3.jar
 [Architectury Transformer DEBUG]  - C:\Users\leevo\.gradle\caches\modules-2\files-2.1\org.lz4\lz4-java\1.8.0\4b986a99445e49ea5fbf5d149c4b63f6ed6c6780\lz4-java-1.8.0.jar
-[Architectury Transformer DEBUG]  - C:\Users\leevo\.gradle\caches\fabric-loom\minecraftMaven\net\minecraft\neoforge-21.10.47-beta-minecraft-merged\1.21.10-loom.mappings.1_21_10.layered+hash.40359-v2-neoforge-21.10.47-beta\neoforge-21.10.47-beta-minecraft-merged-1.21.10-loom.mappings.1_21_10.layered+hash.40359-v2-neoforge-21.10.47-beta.jar
+[Architectury Transformer DEBUG]  - C:\Users\leevo\.gradle\caches\fabric-loom\minecraftMaven\net\minecraft\neoforge-21.9.16-beta-minecraft-merged\1.21.9-loom.mappings.1_21_9.layered+hash.40359-v2-neoforge-21.9.16-beta\neoforge-21.9.16-beta-minecraft-merged-1.21.9-loom.mappings.1_21_9.layered+hash.40359-v2-neoforge-21.9.16-beta.jar
 [Architectury Transformer DEBUG]  - C:\Users\leevo\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.118.Final\7e6b89e3746acb7cf6f0aad993bbd058fc6d912e\netty-transport-native-epoll-4.1.118.Final-linux-x86_64.jar
 [Architectury Transformer DEBUG]  - C:\Users\leevo\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.118.Final\82f94d0a9d837f6b6a580379373310ff7288c0f8\netty-transport-native-epoll-4.1.118.Final-linux-aarch_64.jar
-[Architectury Transformer] Read classpath in 1.399 s
-[Architectury Transformer DEBUG] Closed File Systems for D:\FNAF-Jumpscare\common\build\devlibs\fnafmod-common-1.2.2-dev.jar
-[Architectury Transformer DEBUG] Transforming 6 transformer(s) from D:\FNAF-Jumpscare\common\build\devlibs\fnafmod-common-1.2.2-dev.jar to C:\Users\leevo\AppData\Local\Temp\13363767582657775525.jar: 
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@4988d8b8
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@c0c2f8d
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@305b7c14
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeAnnotations@6913c1fb
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment@66d18979
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.GenerateFakeNeoForgeMod@bccb269
-[Architectury Transformer DEBUG] Transforming from D:\FNAF-Jumpscare\common\build\devlibs\fnafmod-common-1.2.2-dev.jar to C:\Users\leevo\AppData\Local\Temp\13363767582657775525.jar with 6 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
+[Architectury Transformer] Read classpath in 2.333 s
+[Architectury Transformer DEBUG] Closed File Systems for D:\FNAF-Jumpscare\common\build\devlibs\fnafmod-common-1.3.4-dev.jar
+[Architectury Transformer DEBUG] Transforming 6 transformer(s) from D:\FNAF-Jumpscare\common\build\devlibs\fnafmod-common-1.3.4-dev.jar to C:\Users\leevo\AppData\Local\Temp\393311451281595787.jar: 
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@305b7c14
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@6913c1fb
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@66d18979
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeAnnotations@bccb269
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment@609cd4d8
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.GenerateFakeNeoForgeMod@17f7cd29
+[Architectury Transformer DEBUG] Transforming from D:\FNAF-Jumpscare\common\build\devlibs\fnafmod-common-1.3.4-dev.jar to C:\Users\leevo\AppData\Local\Temp\393311451281595787.jar with 6 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000002788102f920@394df057
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000002e48102f920@5aebe890
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
@@ -122,85 +122,112 @@
 [Architectury Transformer DEBUG] Writing lee/fnafmod/network/SpawnMobPacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing lee/fnafmod/network/NetworkHandlerImpl with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing lee/fnafmod/network/NetworkHandler with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing lee/fnafmod/platform/ClientEventHandlerImpl with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing lee/fnafmod/platform/ClientEventHandler with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing lee/fnafmod/util/ArmorRandomizer$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing lee/fnafmod/platform/ClientEventHandlerImpl with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing lee/fnafmod/util/ArmorRandomizer with maxs=true frames=true
-[Architectury Transformer DEBUG] Closed File Systems for C:\Users\leevo\AppData\Local\Temp\13363767582657775525.jar
-[Architectury Transformer] Listening at D:\FNAF-Jumpscare\common\build\devlibs\fnafmod-common-1.2.2-dev.jar
-[Architectury Transformer DEBUG] Temporary jar [C:\Users\leevo\AppData\Local\Temp\13363767582657775525.jar] contains packages: lee.fnafmod, lee.fnafmod.platform, lee.fnafmod.network, lee.fnafmod.client, lee.fnafmod.util
-[Architectury Transformer DEBUG] Closed File Systems for D:\FNAF-Jumpscare\common\build\devlibs\fnafmod-common-1.2.2-dev.jar
+[Architectury Transformer DEBUG] Writing lee/fnafmod/util/ArmorRandomizer$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Closed File Systems for C:\Users\leevo\AppData\Local\Temp\393311451281595787.jar
+[Architectury Transformer] Listening at D:\FNAF-Jumpscare\common\build\devlibs\fnafmod-common-1.3.4-dev.jar
+[Architectury Transformer DEBUG] Temporary jar [C:\Users\leevo\AppData\Local\Temp\393311451281595787.jar] contains packages: lee.fnafmod, lee.fnafmod.platform, lee.fnafmod.network, lee.fnafmod.client, lee.fnafmod.util
+[Architectury Transformer DEBUG] Closed File Systems for D:\FNAF-Jumpscare\common\build\devlibs\fnafmod-common-1.3.4-dev.jar
 [Architectury Transformer DEBUG] Classpath entry [D:\FNAF-Jumpscare\neoforge\build\resources\main] contains packages: 
 [Architectury Transformer DEBUG] Transforming from lee/fnafmod/network/NetworkHandler.class to lee/fnafmod/network/NetworkHandler.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000002788102f920@394df057
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000002e48102f920@5aebe890
 [Architectury Transformer DEBUG] Remapping with Dirty Mappings...
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing lee/fnafmod/network/NetworkHandler with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed lee/fnafmod/network/NetworkHandler in 76.64 ms
+[Architectury Transformer DEBUG] Transformed lee/fnafmod/network/NetworkHandler in 99.28 ms
 [Architectury Transformer DEBUG] Transforming from lee/fnafmod/fnafmod.class to lee/fnafmod/fnafmod.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000002788102f920@394df057
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000002e48102f920@5aebe890
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing lee/fnafmod/fnafmod with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed lee/fnafmod/fnafmod in 15.50 ms
+[Architectury Transformer DEBUG] Transformed lee/fnafmod/fnafmod in 19.50 ms
 [Architectury Transformer DEBUG] Transforming from lee/fnafmod/platform/ClientEventHandler.class to lee/fnafmod/platform/ClientEventHandler.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000002788102f920@394df057
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000002e48102f920@5aebe890
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing lee/fnafmod/platform/ClientEventHandler with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed lee/fnafmod/platform/ClientEventHandler in 10.67 ms
+[Architectury Transformer DEBUG] Transformed lee/fnafmod/platform/ClientEventHandler in 12.69 ms
 [Architectury Transformer DEBUG] Transforming from lee/fnafmod/platform/ClientEventHandlerImpl.class to lee/fnafmod/platform/ClientEventHandlerImpl.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000002788102f920@394df057
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000002e48102f920@5aebe890
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing lee/fnafmod/platform/ClientEventHandlerImpl with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed lee/fnafmod/platform/ClientEventHandlerImpl in 10.51 ms
+[Architectury Transformer DEBUG] Transformed lee/fnafmod/platform/ClientEventHandlerImpl in 12.83 ms
 [Architectury Transformer DEBUG] Transforming from lee/fnafmod/client/Keybinds.class to lee/fnafmod/client/Keybinds.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000002788102f920@394df057
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000002e48102f920@5aebe890
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing lee/fnafmod/client/Keybinds with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed lee/fnafmod/client/Keybinds in 49.69 ms
+[Architectury Transformer DEBUG] Transformed lee/fnafmod/client/Keybinds in 13.14 ms
 [Architectury Transformer DEBUG] Transforming from lee/fnafmod/network/NetworkHandlerImpl.class to lee/fnafmod/network/NetworkHandlerImpl.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000002788102f920@394df057
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000002e48102f920@5aebe890
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing lee/fnafmod/network/NetworkHandlerImpl with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed lee/fnafmod/network/NetworkHandlerImpl in 15.03 ms
+[Architectury Transformer DEBUG] Transformed lee/fnafmod/network/NetworkHandlerImpl in 16.54 ms
 [Architectury Transformer DEBUG] Transforming from lee/fnafmod/client/JumpscareManager.class to lee/fnafmod/client/JumpscareManager.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000002788102f920@394df057
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000002e48102f920@5aebe890
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing lee/fnafmod/client/JumpscareManager with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed lee/fnafmod/client/JumpscareManager in 22.24 ms
+[Architectury Transformer DEBUG] Transformed lee/fnafmod/client/JumpscareManager in 22.44 ms
 [Architectury Transformer DEBUG] Transforming from lee/fnafmod/client/Jumpscare.class to lee/fnafmod/client/Jumpscare.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000002788102f920@394df057
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000002e48102f920@5aebe890
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing lee/fnafmod/client/Jumpscare with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed lee/fnafmod/client/Jumpscare in 20.05 ms
+[Architectury Transformer DEBUG] Transformed lee/fnafmod/client/Jumpscare in 20.67 ms
+[Architectury Transformer DEBUG] Transforming from lee/fnafmod/network/SpawnMobPacket.class to lee/fnafmod/network/SpawnMobPacket.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000002e48102f920@5aebe890
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing lee/fnafmod/network/SpawnMobPacket with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed lee/fnafmod/network/SpawnMobPacket in 18.46 ms
+[Architectury Transformer DEBUG] Transforming from lee/fnafmod/util/ArmorRandomizer.class to lee/fnafmod/util/ArmorRandomizer.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000002e48102f920@5aebe890
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing lee/fnafmod/util/ArmorRandomizer with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed lee/fnafmod/util/ArmorRandomizer in 11.61 ms
+[Architectury Transformer DEBUG] Transforming from lee/fnafmod/util/ArmorRandomizer$1.class to lee/fnafmod/util/ArmorRandomizer$1.class with 6 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformNeoForgeEnvironment$$Lambda/0x000002e48102f920@5aebe890
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/neoforged/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/neoforged/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing lee/fnafmod/util/ArmorRandomizer$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed lee/fnafmod/util/ArmorRandomizer$1 in 9.826 ms

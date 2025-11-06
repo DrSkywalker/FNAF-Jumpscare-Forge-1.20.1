@@ -1,4 +1,4 @@
-version:4556
+version:4554
 ao:true
 biomeBlendRadius:2
 enableVsync:true
@@ -24,8 +24,8 @@ particles:0
 reducedDebugInfo:false
 renderClouds:"true"
 cloudRange:128
-renderDistance:12
-simulationDistance:12
+renderDistance:6
+simulationDistance:6
 screenEffectScale:1.0
 soundDevice:""
 autoJump:false
@@ -79,7 +79,7 @@ notificationDisplayTime:1.0
 useNativeTransport:true
 mainHand:"right"
 attackIndicator:1
-tutorialStep:movement
+tutorialStep:none
 mouseWheelSensitivity:1.0
 rawMouseInput:true
 allowCursorChanges:true
@@ -138,7 +138,7 @@ key_key.hotbar.9:key.keyboard.9
 key_key.fnafmod.test_scare:key.keyboard.f6
 key_key.fnafmod.test_first_scare:key.keyboard.f7
 soundCategory_master:1.0
-soundCategory_music:1.0
+soundCategory_music:0.0
 soundCategory_record:1.0
 soundCategory_weather:1.0
 soundCategory_block:1.0

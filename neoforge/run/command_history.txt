@@ -1,0 +1,6 @@
+/locate structure
+/locate structure minecraft:village_plains
+/tp @s 352 ~ 96
+/summon minecraft:creaking
+/summon minecraft:warden
+/tick rate 200

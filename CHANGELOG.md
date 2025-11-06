@@ -4,6 +4,14 @@ All notable changes to this project will be documented here.
 This project follows [Semantic Versioning](https://semver.org/).
 
 ---
+## 1.3.4 – 2025-11-05
+
+> _Fixed Jumpscare Timer_
+
+### ⚙️ Technical
+
+- Updated Propability for Jumpscares.
+
 ## 1.3.3 – 2025-11-05
 
 > _I Am Dumb And I Didn't Change The Version Number Of MC._

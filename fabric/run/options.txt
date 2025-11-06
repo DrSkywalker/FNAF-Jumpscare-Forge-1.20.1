@@ -1,4 +1,4 @@
-version:4556
+version:4554
 ao:true
 biomeBlendRadius:2
 enableVsync:true
@@ -24,8 +24,8 @@ particles:0
 reducedDebugInfo:false
 renderClouds:"true"
 cloudRange:128
-renderDistance:7
-simulationDistance:7
+renderDistance:6
+simulationDistance:6
 screenEffectScale:1.0
 soundDevice:""
 autoJump:false
