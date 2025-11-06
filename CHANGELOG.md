@@ -4,6 +4,7 @@ All notable changes to this project will be documented here.
 This project follows [Semantic Versioning](https://semver.org/).
 
 ---
+
 ## 1.1 – 2025-11-02
 
 > _Pizza Sim Update_
@@ -21,7 +22,7 @@ This project follows [Semantic Versioning](https://semver.org/).
 - Updated Readme with new mod details and credits
 - Updated Jumpscare probabilities for better experience
 - Improved performance
-- Removed Herobrine 
+- Removed Herobrine
 
 ## 1.0.9 – 2025-11-02
 

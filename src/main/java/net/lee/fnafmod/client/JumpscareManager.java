@@ -20,10 +20,10 @@ import java.util.concurrent.ConcurrentHashMap;
 public class JumpscareManager {
 
     private static final long MIN_RETRIGGER_NS = 250_000_000L; // 250 ms
-    private static final double CHECK_MIN_SECONDS = 60.0;
-    private static final double CHECK_MAX_SECONDS = 120.0;
-    private static final double BASE_TRIGGER_CHANCE = 0.5;
-    private static final double IDLE_MULTIPLIER = 1;
+    private static final double CHECK_MIN_SECONDS = 300.0;
+    private static final double CHECK_MAX_SECONDS = 600.0;
+    private static final double BASE_TRIGGER_CHANCE = 0.35;
+    private static final double IDLE_MULTIPLIER = 0.80;
     private static final double MAX_CHANCE_CLAMP = 0.85;
     private static final double MIN_COOLDOWN_SECONDS = 10.0;
     private static final int HOLD_LAST_SECS = 0;
@@ -209,9 +209,14 @@ public class JumpscareManager {
         this.active = js;
         this.startNanos = nowNs();
 
+        // increase this value to make the sound louder (1.0 = default)
+        float volume = 2.0f;
+        // keep pitch at 1.0f (change if you want higher/lower pitch)
+        float pitch = 1.0f;
+
         Minecraft mc = Minecraft.getInstance();
         SoundEvent se = SOUND_CACHE.computeIfAbsent(js.soundKey(), SoundEvent::createVariableRangeEvent);
-        playingSound = SimpleSoundInstance.forUI(se, 1.0f);
+        playingSound = SimpleSoundInstance.forUI(se, volume, pitch);
         mc.getSoundManager().play(playingSound);
     }
 
