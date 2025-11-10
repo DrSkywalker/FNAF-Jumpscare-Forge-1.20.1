@@ -4,6 +4,10 @@ All notable changes to this project will be documented here.
 This project follows [Semantic Versioning](https://semver.org/).
 
 ---
+## 1.3.7 – 2025-11-10
+
+> _Updated Values_
+
 ## 1.3.6 – 2025-11-06
 
 > _Updated Values_
