@@ -1,0 +1,105 @@
+import java.io.File
+import javax.imageio.ImageIO
+import javax.imageio.ImageWriteParam
+import javax.imageio.ImageWriter
+import javax.imageio.stream.ImageOutputStream
+import java.awt.image.BufferedImage
+
+/**
+ * Gradle task to optimize PNG resources for the FNAF mod.
+ * This reduces the final JAR size by re-encoding PNGs with better compression.
+ */
+tasks.register('optimizeResources') {
+    description = 'Optimizes PNG texture resources to reduce file size'
+    group = 'build'
+    
+    doLast {
+        def resourcesDir = file('src/main/resources/assets/fnafmod/textures/jumpscares')
+        def outputDir = file('build/resources/main/assets/fnafmod/textures/jumpscares')
+        
+        if (!resourcesDir.exists()) {
+            println "Resources directory not found: ${resourcesDir}"
+            return
+        }
+        
+        outputDir.mkdirs()
+        
+        int optimizedCount = 0
+        long originalSize = 0
+        long optimizedSize = 0
+        
+        // Find all PNG files in jumpscares directory
+        fileTree(resourcesDir).matching {
+            include '**/*.png'
+        }.each { File pngFile ->
+            try {
+                // Calculate relative path from jumpscares directory
+                def relativePath = resourcesDir.toPath().relativize(pngFile.toPath()).toString()
+                
+                // Create output file path
+                def outputFile = new File(outputDir, relativePath)
+                outputFile.parentFile.mkdirs()
+                
+                // Read the image
+                BufferedImage image = ImageIO.read(pngFile)
+                
+                if (image == null) {
+                    println "Failed to read: ${pngFile.name}"
+                    return
+                }
+                
+                // Write with maximum PNG compression
+                ImageWriter writer = ImageIO.getImageWritersByFormatName("png").next()
+                ImageWriteParam writeParam = writer.getDefaultWriteParam()
+                
+                ImageOutputStream ios = ImageIO.createImageOutputStream(outputFile)
+                writer.setOutput(ios)
+                writer.write(null, new javax.imageio.IIOImage(image, null, null), writeParam)
+                writer.dispose()
+                ios.close()
+                
+                originalSize += pngFile.length()
+                optimizedSize += outputFile.length()
+                optimizedCount++
+                
+                if (optimizedCount % 50 == 0) {
+                    println "Optimized ${optimizedCount} files..."
+                }
+                
+            } catch (Exception e) {
+                println "Error optimizing ${pngFile}: ${e.message}"
+            }
+        }
+        
+        if (optimizedCount > 0) {
+            def reduction = 100.0 * (originalSize - optimizedSize) / originalSize
+            def reducedMB = (originalSize - optimizedSize) / 1024.0 / 1024.0
+            println "\nOptimization complete:"
+            println "  Files optimized: ${optimizedCount}"
+            println "  Original size: ${String.format('%.2f', originalSize / 1024.0 / 1024.0)} MB"
+            println "  Optimized size: ${String.format('%.2f', optimizedSize / 1024.0 / 1024.0)} MB"
+            if (reduction > 0) {
+                println "  Space saved: ${String.format('%.2f', reducedMB)} MB (${String.format('%.1f', reduction)}%)"
+            } else {
+                println "  Note: Optimization did not reduce size significantly"
+                println "  Files are already well-compressed"
+            }
+        } else {
+            println "No PNG files found to optimize"
+        }
+    }
+}
+
+// Make processResources depend on optimizeResources
+tasks.named('processResources') {
+    dependsOn 'optimizeResources'
+    
+    // Exclude original unoptimized jumpscares from the JAR to save space
+    exclude 'assets/fnafmod/textures/jumpscares/**'
+    
+    // Copy optimized resources from build directory
+    from('build/resources/main/assets/fnafmod/textures/jumpscares') {
+        into 'assets/fnafmod/textures/jumpscares'
+    }
+}
+

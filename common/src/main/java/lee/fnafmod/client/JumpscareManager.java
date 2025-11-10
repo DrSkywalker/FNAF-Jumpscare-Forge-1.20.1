@@ -180,6 +180,9 @@ public class JumpscareManager {
                     String file = String.format(pattern, f + 1);
                     ResourceLocation rl = ResourceLocation.fromNamespaceAndPath(base.getNamespace(), basePath + file);
                     frames[f] = rl;
+                    
+                    // Pre-load compressed textures if available
+                    CompressedResourceLoader.ensureTextureLoaded(rl);
                 }
                 ResourceLocation soundLoc = ResourceLocation.tryParse(sound);
                 catalog.add(new Jumpscare(
