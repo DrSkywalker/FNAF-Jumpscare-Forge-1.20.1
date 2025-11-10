@@ -142,7 +142,7 @@
       "folder": "fnafmod:textures/jumpscares/springtrap/",
       "pattern": "springtrap_%d.png",
       "frameCount": 41,
-      "fps": 24,
+      "fps": 30,
       "sound": "fnafmod:jumpscares.springtrap"
     },
     {
@@ -150,7 +150,7 @@
       "folder": "fnafmod:textures/jumpscares/molten_freddy/",
       "pattern": "moltenfreddy_%d.png",
       "frameCount": 16,
-      "fps": 20,
+      "fps": 16,
       "sound": "fnafmod:jumpscares.salvage"
     },
     {
@@ -166,7 +166,7 @@
       "folder": "fnafmod:textures/jumpscares/scrap_baby/",
       "pattern": "scrapbaby_%d.png",
       "frameCount": 14,
-      "fps": 24,
+      "fps": 14,
       "sound": "fnafmod:jumpscares.pizzasim"
     },
     {
@@ -174,7 +174,7 @@
       "folder": "fnafmod:textures/jumpscares/lefty/",
       "pattern": "lefty_%d.png",
       "frameCount": 21,
-      "fps": 24,
+      "fps": 30,
       "sound": "fnafmod:jumpscares.pizzasim"
     }
   ]

@@ -225,6 +225,8 @@ public class JumpscareManager {
         SoundEvent se = SOUND_CACHE.computeIfAbsent(js.soundKey(), SoundEvent::createVariableRangeEvent);
         playingSound = SimpleSoundInstance.forUI(se, 1.0f);
         mc.getSoundManager().play(playingSound);
+
+        nextCheckAtNanos = nowNs() + (long) (MIN_COOLDOWN_SECONDS * 1_000_000_000L);
     }
 
     public void tick() {

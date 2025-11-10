@@ -8,6 +8,24 @@
       <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___fabric__fabric.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___fabric__fabric.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___neoforge__neoforge.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server___neoforge__neoforge.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/lee/fnafmod/client/JumpscareManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/lee/fnafmod/client/JumpscareManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/fnafmod/jumpscares/jumpscares.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/fnafmod/jumpscares/jumpscares.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/run/.architectury-transformer/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/.architectury-transformer/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-1.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-2.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-3.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-4.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-4.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-5.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-5.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-6.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-6.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/2025-11-05-7.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/debug-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/debug-1.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/debug-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/debug-2.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/debug-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/debug-3.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/debug-4.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/debug-4.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/debug-5.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/debug-5.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/run/logs/latest.log" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/logs/latest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neoforge/run/usercache.json" beforeDir="false" afterPath="$PROJECT_DIR$/neoforge/run/usercache.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -309,6 +327,10 @@
       <workItem from="1762400182068" duration="2126000" />
       <workItem from="1762403075856" duration="2056000" />
       <workItem from="1762405390934" duration="141000" />
+      <workItem from="1762458058993" duration="297000" />
+      <workItem from="1762476649116" duration="1280000" />
+      <workItem from="1762800341516" duration="447000" />
+      <workItem from="1762801935837" duration="1021000" />
     </task>
     <task id="LOCAL-00001" summary="Fixes">
       <option name="closed" value="true" />
@@ -486,7 +508,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762405313496</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Changes some Jumpscare values">
+      <option name="closed" value="true" />
+      <created>1762458340030</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1762458340030</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
